@@ -1,15 +1,17 @@
-const CACHE='family-travel-os-v12';
-const CORE=['./','./index.html','./manifest.webmanifest','./christmas-icon.svg','./trip-data.json','./countdown-lab.js'];
+const CACHE='family-travel-os-v13';
+const CORE=['./','./index.html','./manifest.webmanifest','./christmas-icon.svg','./trip-data.json','./countdown-lab.js','./weather.js'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));
 });
 self.addEventListener('activate',event=>{
   event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));
 });
-async function withFinalCountdown(response){
+async function withEnhancements(response){
   const text=await response.text();
-  const tag='<script src="./countdown-lab.js"></script>';
-  const html=text.includes('countdown-lab.js')?text:text.replace('</body>',tag+'</body>');
+  const countdown='<script src="./countdown-lab.js"></script>';
+  const weather='<script src="./weather.js"></script>';
+  let html=text.includes('countdown-lab.js')?text:text.replace('</body>',countdown+'</body>');
+  html=html.includes('weather.js')?html:html.replace('</body>',weather+'</body>');
   return new Response(html,{status:response.status,statusText:response.statusText,headers:{'Content-Type':'text/html; charset=utf-8'}});
 }
 self.addEventListener('fetch',event=>{
@@ -19,7 +21,7 @@ self.addEventListener('fetch',event=>{
   if(req.mode==='navigate'){
     event.respondWith((async()=>{
       try{
-        const live=await withFinalCountdown(await fetch(req,{cache:'no-store'}));
+        const live=await withEnhancements(await fetch(req,{cache:'no-store'}));
         const copy=live.clone();
         caches.open(CACHE).then(c=>c.put('./index.html',copy));
         return live;
