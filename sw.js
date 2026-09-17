@@ -1,4 +1,4 @@
-const CACHE='family-travel-os-v15';
+const CACHE='family-travel-os-v16';
 const CORE=['./','./index.html','./manifest.webmanifest','./christmas-icon.svg','./trip-data.json','./countdown-lab.js','./weather.js','./site-theme.js'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));
