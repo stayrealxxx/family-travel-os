@@ -1,0 +1,111 @@
+:root{
+  --bg:#edf4f9;
+  --bg2:#edf4f9;
+  --card:rgba(250,252,253,.90);
+  --solid:#fafcfd;
+  --text:#101820;
+  --muted:#6f7f8c;
+  --line:rgba(74,103,121,.14);
+  --cyan:#6fb8c7;
+  --cyan2:#9adbe2;
+  --blue:#77c4d2;
+  --green:#3e9d78;
+  --red:#cf6d68;
+  --gold:#c58c2d;
+  --shadow:0 9px 24px rgba(83,110,127,.08);
+  --shadow-lg:0 18px 44px rgba(83,110,127,.11);
+}
+[data-theme="dark"]{
+  --bg:#071521;
+  --bg2:#071823;
+  --card:rgba(11,31,49,.88);
+  --solid:#0d2237;
+  --text:#f6fbff;
+  --muted:#91adbd;
+  --line:rgba(152,205,229,.13);
+  --cyan:#75dcff;
+  --cyan2:#5ac7d8;
+  --blue:#53d6ff;
+  --green:#63c49d;
+  --red:#ff8b83;
+  --gold:#ffd070;
+  --shadow:0 12px 30px rgba(2,14,26,.24);
+  --shadow-lg:0 24px 68px rgba(4,23,39,.34);
+}
+html{background:var(--bg)}
+body{
+  background:
+    linear-gradient(180deg,#d7e9ea 0 8px,transparent 8px),
+    radial-gradient(circle at 83% 3%,rgba(198,229,233,.55),transparent 24%),
+    radial-gradient(circle at 15% 14%,rgba(215,233,234,.72),transparent 30%),
+    linear-gradient(180deg,#edf4f9 0%,#eef4fa 42%,#edf4f9 100%);
+  background-attachment:fixed;
+}
+[data-theme="dark"] body{
+  background:
+    radial-gradient(circle at 8% 4%,rgba(83,214,255,.12),transparent 25%),
+    radial-gradient(circle at 92% 18%,rgba(108,99,255,.09),transparent 28%),
+    linear-gradient(180deg,#071521 0%,#0a2032 44%,#071823 100%);
+}
+.card,.glass,.trip-op,.sync-panel,.square-btn{
+  background:var(--card);
+  border-color:var(--line);
+}
+.card,.glass,.trip-op,.sync-panel,.square-btn,.bottom-nav{
+  transition:background .28s ease,border-color .28s ease,color .28s ease,box-shadow .28s ease;
+}
+.booking{
+  background:linear-gradient(145deg,rgba(250,252,253,.96),rgba(245,249,251,.91));
+  box-shadow:0 9px 24px rgba(83,110,127,.08);
+}
+.booking:after{
+  background:radial-gradient(circle,rgba(111,184,199,.14),rgba(154,219,226,.055) 48%,transparent 70%);
+}
+.quick,.day,.route-card,.airport-option,.todo{
+  background:linear-gradient(150deg,rgba(250,252,253,.94),rgba(237,244,249,.88));
+}
+.trip-op,.sync-panel{
+  background:rgba(250,252,253,.86);
+}
+.bottom-nav{
+  background:rgba(250,252,253,.92);
+  border-top-color:rgba(74,103,121,.12);
+}
+.square-btn{
+  color:#101820;
+  border-color:rgba(16,24,32,.78);
+  box-shadow:0 8px 20px rgba(67,83,94,.08);
+}
+.hero{
+  background:linear-gradient(155deg,rgba(250,252,253,.98),rgba(237,244,249,.97) 58%,rgba(215,233,234,.94));
+  border-color:rgba(74,103,121,.13);
+  box-shadow:0 18px 44px rgba(83,110,127,.11);
+  color:#101820;
+}
+.hero .eyebrow,.hero .hero-sub,.hero .progress-top,.hero .next-copy span,.journey-core span,.journey-kicker,.journey-desc{color:#71818e}
+.hero .next-strip{background:rgba(250,252,253,.78);border-color:rgba(74,103,121,.12)}
+.hero .next-place{color:#4a95a6}
+.hero .track{background:rgba(89,121,140,.10)}
+.hero .fill{background:linear-gradient(90deg,#77c4d2,#9adbe2);box-shadow:0 0 18px rgba(119,196,210,.18)}
+.hero .journey-bg{stroke:rgba(74,103,121,.10)}
+.hero .journey-chip{background:#fafcfd;border-color:rgba(74,103,121,.13);color:#526776}
+.hero:before{background:#c7e7ea;opacity:.55}
+.hero:after{background:#d7e9ea;opacity:.50}
+[data-theme="dark"] .booking,[data-theme="dark"] .quick,[data-theme="dark"] .day,[data-theme="dark"] .route-card,[data-theme="dark"] .airport-option,[data-theme="dark"] .todo,[data-theme="dark"] .trip-op,[data-theme="dark"] .sync-panel{
+  background:rgba(11,31,49,.88);
+}
+[data-theme="dark"] .booking:after{background:radial-gradient(circle,rgba(83,214,255,.13),transparent 70%)}
+[data-theme="dark"] .bottom-nav{background:rgba(10,31,48,.90);border-top-color:rgba(152,205,229,.13)}
+[data-theme="dark"] .square-btn{background:rgba(17,43,67,.82);color:#f6fbff;border-color:rgba(255,255,255,.75)}
+[data-theme="dark"] .hero{
+  background:linear-gradient(160deg,#0e1b2c,#112b43 55%,#103a47);
+  border-color:rgba(94,213,255,.16);
+  box-shadow:0 24px 68px rgba(4,23,39,.34);
+  color:#f4fbff;
+}
+[data-theme="dark"] .hero .eyebrow,[data-theme="dark"] .hero .hero-sub,[data-theme="dark"] .hero .progress-top,[data-theme="dark"] .hero .next-copy span,[data-theme="dark"] .journey-core span,[data-theme="dark"] .journey-kicker,[data-theme="dark"] .journey-desc{color:#9fb9c8}
+[data-theme="dark"] .hero .next-strip{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.09)}
+[data-theme="dark"] .hero .next-place{color:#75dcff}
+[data-theme="dark"] .hero .track{background:rgba(255,255,255,.09)}
+[data-theme="dark"] .hero .journey-bg{stroke:rgba(255,255,255,.08)}
+[data-theme="dark"] .hero .journey-chip{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.09);color:#cfe8f3}
