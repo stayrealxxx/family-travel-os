@@ -1,4 +1,4 @@
-const CACHE='family-travel-os-v11';
+const CACHE='family-travel-os-v12';
 const CORE=['./','./index.html','./manifest.webmanifest','./christmas-icon.svg','./trip-data.json','./countdown-lab.js'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));
@@ -6,7 +6,7 @@ self.addEventListener('install',event=>{
 self.addEventListener('activate',event=>{
   event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));
 });
-async function withCountdownLab(response){
+async function withFinalCountdown(response){
   const text=await response.text();
   const tag='<script src="./countdown-lab.js"></script>';
   const html=text.includes('countdown-lab.js')?text:text.replace('</body>',tag+'</body>');
@@ -19,7 +19,7 @@ self.addEventListener('fetch',event=>{
   if(req.mode==='navigate'){
     event.respondWith((async()=>{
       try{
-        const live=await withCountdownLab(await fetch(req,{cache:'no-store'}));
+        const live=await withFinalCountdown(await fetch(req,{cache:'no-store'}));
         const copy=live.clone();
         caches.open(CACHE).then(c=>c.put('./index.html',copy));
         return live;
