@@ -1,0 +1,13 @@
+{
+  "trip": {
+    "id": "west-coast-christmas-2026",
+    "title": "West Coast Christmas 2026"
+  },
+  "sync": {
+    "source": "Gmail via ChatGPT",
+    "lastChecked": "2026-09-17 12:11 ET",
+    "mode": "hourly",
+    "privacy": "public-safe-fields-only"
+  },
+  "reservations": []
+}
