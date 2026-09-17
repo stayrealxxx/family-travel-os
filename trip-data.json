@@ -1,4 +1,5 @@
 {
+  "schemaVersion": 2,
   "trip": {
     "id": "west-coast-christmas-2026",
     "title": "West Coast Christmas 2026",
@@ -15,10 +16,12 @@
     "mode": "auto",
     "privacy": "public-safe-fields-only",
     "lastResult": "0 changes · 0 review",
-    "engine": "gmail-sync/1.1.0"
+    "engine": "gmail-sync/1.1.0",
+    "pollIntervalMinutes": 15
   },
   "bookings": [
     {
+      "id": "flight-outbound",
       "type": "flight",
       "label": "Outbound flight",
       "status": "STILL NEEDED",
@@ -32,6 +35,7 @@
       "detail": "12/24 从家开车到 PHL；优先 PHL → SFO nonstop，避免过早起飞。"
     },
     {
+      "id": "car-bay-area",
       "type": "car",
       "label": "Bay Area rental car",
       "status": "STILL NEEDED",
@@ -43,6 +47,7 @@
       "detail": "SFO 落地后取车开往 San Jose；12/28 根据加州段航班从 SFO 或 SJC 还车。"
     },
     {
+      "id": "hotel-san-jose",
       "type": "hotel",
       "label": "San Jose stay",
       "status": "STILL NEEDED",
@@ -54,6 +59,7 @@
       "detail": "连续住 4 晚；优先家庭便利、停车方便并减少换酒店。"
     },
     {
+      "id": "flight-california",
       "type": "flight",
       "label": "California flight",
       "status": "STILL NEEDED",
@@ -67,6 +73,7 @@
       "detail": "比较 SFO vs SJC 出发、LAX vs BUR 抵达；按总成本和到 Thousand Oaks 的实际时间决定。"
     },
     {
+      "id": "car-southern-california",
       "type": "car",
       "label": "Southern California rental car",
       "status": "STILL NEEDED",
@@ -78,6 +85,7 @@
       "detail": "抵达南加州后取车；1/2 在 LAX 还车后搭乘返程航班。"
     },
     {
+      "id": "hotel-thousand-oaks",
       "type": "hotel",
       "label": "Thousand Oaks stay",
       "status": "STILL NEEDED",
@@ -89,6 +97,7 @@
       "detail": "住在朋友家附近连续 5 晚；优先房间空间、早餐、停车和家庭便利。"
     },
     {
+      "id": "flight-return",
       "type": "flight",
       "label": "Return flight",
       "status": "STILL NEEDED",
@@ -102,6 +111,7 @@
       "detail": "1/2 LAX 还车后飞回 PHL；取自家车开回家，1/3 保留 buffer。"
     },
     {
+      "id": "parking-phl",
       "type": "parking",
       "label": "PHL parking",
       "status": "STILL NEEDED",
