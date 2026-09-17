@@ -8,10 +8,12 @@
     "buffer": "2027-01-03"
   },
   "sync": {
-    "source": "ChatGPT / GitHub",
-    "lastChecked": "2026-09-17 15:06 ET",
-    "mode": "manual",
-    "privacy": "public-safe-fields-only"
+    "source": "Gmail → Google Apps Script → GitHub",
+    "lastChecked": "2026-09-17 15:17 EDT",
+    "mode": "auto",
+    "privacy": "public-safe-fields-only",
+    "lastResult": "0 changes · 0 review",
+    "engine": "gmail-sync/1.1.0"
   },
   "bookings": [
     {
