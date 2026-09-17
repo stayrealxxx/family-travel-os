@@ -18,90 +18,25 @@
 <body>
 <div class="shell">
 <header class="top">
-  <div class="brand">
-    <img class="brand-icon" src="./christmas-icon.svg" alt="">
-    <div class="brand-copy"><h1 id="brandTitle">West Coast Christmas</h1><div class="brand-sub" id="brandSub"></div></div>
-  </div>
-  <div class="actions">
-    <span class="network-pill" id="networkPill"><span id="networkBadge">ONLINE</span></span>
-    <button class="square-btn" id="languageButton" type="button" aria-haspopup="true" aria-controls="languageMenu">简</button>
-    <button class="square-btn" id="themeButton" type="button" aria-label="Theme">🌙</button>
-    <div class="language-menu" id="languageMenu" role="menu">
-      <button class="language-option" data-language="zh-CN" type="button">简体中文</button>
-      <button class="language-option" data-language="zh-TW" type="button">繁體中文</button>
-      <button class="language-option" data-language="en" type="button">English</button>
-    </div>
-  </div>
+  <div class="brand"><img class="brand-icon" src="./christmas-icon.svg" alt=""><div class="brand-copy"><h1 id="brandTitle">West Coast Christmas</h1><div class="brand-sub" id="brandSub"></div></div></div>
+  <div class="actions"><span class="network-pill" id="networkPill"><span id="networkBadge">ONLINE</span></span><button class="square-btn" id="languageButton" type="button" aria-haspopup="true" aria-controls="languageMenu">简</button><button class="square-btn" id="themeButton" type="button" aria-label="Theme">🌙</button><div class="language-menu" id="languageMenu" role="menu"><button class="language-option" data-language="zh-CN" type="button">简体中文</button><button class="language-option" data-language="zh-TW" type="button">繁體中文</button><button class="language-option" data-language="en" type="button">English</button></div></div>
 </header>
-
 <section class="hero" id="today">
-  <div class="eyebrow" id="heroEyebrow"></div>
-  <div class="hero-head">
-    <div><h2 id="heroTitle"></h2><div class="hero-sub" id="heroSub"></div></div>
-    <span class="status-pill" id="heroStatus"></span>
-  </div>
-  <div class="journey-ring">
-    <div class="journey-orbit">
-      <svg viewBox="0 0 120 120" aria-hidden="true">
-        <defs><linearGradient id="journeyGradient"><stop offset="0%" stop-color="#53d6ff"/><stop offset="100%" stop-color="#8a82ff"/></linearGradient></defs>
-        <circle class="journey-bg" cx="60" cy="60" r="54"/>
-        <circle class="journey-progress" id="journeyProgress" cx="60" cy="60" r="54"/>
-      </svg>
-      <div class="journey-core"><b id="journeyValue">--</b><span id="journeyUnit">DAYS</span></div>
-      <div class="journey-plane"><span>✈️</span></div>
-    </div>
-    <div class="journey-copy">
-      <div class="journey-kicker" id="journeyKicker"></div>
-      <div class="journey-hms" id="journeyHms">-- : -- : --</div>
-      <div class="journey-desc" id="journeyDescription"></div>
-      <div class="journey-chips"><span class="journey-chip">PHL → SFO</span><span class="journey-chip">SFO/SJC → LAX/BUR</span><span class="journey-chip">LAX → PHL</span></div>
-    </div>
-  </div>
-  <div class="next-strip"><span class="pulse"></span><div class="next-copy"><b id="nextTitle"></b><span id="nextMeta"></span></div><div class="next-place" id="nextPlace">PHL</div></div>
-  <div class="progress"><div class="progress-top"><span id="progressLabel"></span><span id="progressMeta"></span></div><div class="track"><div class="fill" id="progressFill"></div></div></div>
+  <div class="eyebrow" id="heroEyebrow"></div><div class="hero-head"><div><h2 id="heroTitle"></h2><div class="hero-sub" id="heroSub"></div></div><span class="status-pill" id="heroStatus"></span></div>
+  <div class="journey-ring"><div class="journey-orbit"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="journeyGradient"><stop offset="0%" stop-color="#53d6ff"/><stop offset="100%" stop-color="#8a82ff"/></linearGradient></defs><circle class="journey-bg" cx="60" cy="60" r="54"/><circle class="journey-progress" id="journeyProgress" cx="60" cy="60" r="54"/></svg><div class="journey-core"><b id="journeyValue">--</b><span id="journeyUnit">DAYS</span></div><div class="journey-plane"><span>✈️</span></div></div><div class="journey-copy"><div class="journey-kicker" id="journeyKicker"></div><div class="journey-hms" id="journeyHms">-- : -- : --</div><div class="journey-desc" id="journeyDescription"></div><div class="journey-chips"><span class="journey-chip">PHL → SFO</span><span class="journey-chip">SFO/SJC → LAX/BUR</span><span class="journey-chip">LAX → PHL</span></div></div></div>
+  <div class="next-strip"><span class="pulse"></span><div class="next-copy"><b id="nextTitle"></b><span id="nextMeta"></span></div><div class="next-place" id="nextPlace">PHL</div></div><div class="progress"><div class="progress-top"><span id="progressLabel"></span><span id="progressMeta"></span></div><div class="track"><div class="fill" id="progressFill"></div></div></div>
 </section>
-
-<section class="section" id="bookings">
-  <div class="section-head"><h3 id="bookingsTitle"></h3><span class="hint" id="bookingsHint"></span></div>
-  <div id="tripOpsDashboard"></div>
-  <div class="booking-grid" id="bookingGrid"><div class="card loading">Loading…</div></div>
-</section>
-
+<section class="section" id="bookings"><div class="section-head"><h3 id="bookingsTitle"></h3><span class="hint" id="bookingsHint"></span></div><div id="tripOpsDashboard"></div><div class="booking-grid" id="bookingGrid"><div class="card loading">Loading…</div></div></section>
 <div id="weatherAnchor"></div>
-
-<section class="section" id="upnext">
-  <div class="section-head"><h3 id="upNextTitle"></h3><span class="hint" id="upNextHint"></span></div>
-  <div class="quick-scroll" id="quickLook"></div>
-</section>
-
-<section class="section" id="plan">
-  <div class="section-head"><h3 id="planTitle"></h3><span class="hint" id="planHint"></span></div>
-  <div class="timeline" id="timeline"></div>
-</section>
-
-<section class="section" id="journey">
-  <div class="section-head"><h3 id="journeyTitle"></h3><span class="hint" id="journeyHint"></span></div>
-  <div class="airport-flex" id="airportFlex"></div>
-  <div class="card route-card"><div class="route-note" id="routeNote"></div><svg class="route-svg" id="routeSvg" viewBox="0 0 760 165" aria-label="Trip route"></svg></div>
-</section>
-
-<section class="section" id="checklist">
-  <div class="section-head"><h3 id="checklistTitle"></h3><span class="hint" id="checklistHint"></span></div>
-  <div class="checklist" id="todoList"></div>
-</section>
-
-<div class="footer"><span id="footerMain"></span><br><span id="footerPrivacy"></span><br>Runtime 5.1.0</div>
+<section class="section" id="upnext"><div class="section-head"><h3 id="upNextTitle"></h3><span class="hint" id="upNextHint"></span></div><div class="quick-scroll" id="quickLook"></div></section>
+<section class="section" id="plan"><div class="section-head"><h3 id="planTitle"></h3><span class="hint" id="planHint"></span></div><div class="timeline" id="timeline"></div></section>
+<section class="section" id="journey"><div class="section-head"><h3 id="journeyTitle"></h3><span class="hint" id="journeyHint"></span></div><div class="airport-flex" id="airportFlex"></div><div class="card route-card"><div class="route-note" id="routeNote"></div><svg class="route-svg" id="routeSvg" viewBox="0 0 760 165" aria-label="Trip route"></svg></div></section>
+<section class="section" id="checklist"><div class="section-head"><h3 id="checklistTitle"></h3><span class="hint" id="checklistHint"></span></div><div class="checklist" id="todoList"></div></section>
+<div class="footer"><span id="footerMain"></span><br><span id="footerPrivacy"></span><br>Runtime 5.2.0</div>
 </div>
-
-<nav class="bottom-nav" aria-label="Primary navigation"><div class="bottom-nav-inner">
-  <a class="active" href="#today" data-target="today"><span class="i">✨</span><span id="navToday">Today</span></a>
-  <a href="#bookings" data-target="bookings"><span class="i">🎫</span><span id="navBookings">Bookings</span></a>
-  <a href="#plan" data-target="plan"><span class="i">🗓️</span><span id="navPlan">Plan</span></a>
-  <a href="#checklist" data-target="checklist"><span class="i">✅</span><span id="navChecklist">Checklist</span></a>
-</div></nav>
-
+<nav class="bottom-nav" aria-label="Primary navigation"><div class="bottom-nav-inner"><a class="active" href="#today" data-target="today"><span class="i">✨</span><span id="navToday">Today</span></a><a href="#bookings" data-target="bookings"><span class="i">🎫</span><span id="navBookings">Bookings</span></a><a href="#plan" data-target="plan"><span class="i">🗓️</span><span id="navPlan">Plan</span></a><a href="#checklist" data-target="checklist"><span class="i">✅</span><span id="navChecklist">Checklist</span></a></div></nav>
 <script src="./plan-data-v1.js"></script>
-<script src="./app-core-v2.js"></script>
+<script src="./app-core-v3.js"></script>
 <script src="./weather-v4.js"></script>
 </body>
 </html>
