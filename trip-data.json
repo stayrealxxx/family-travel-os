@@ -1,13 +1,89 @@
 {
   "trip": {
     "id": "west-coast-christmas-2026",
-    "title": "West Coast Christmas 2026"
+    "title": "West Coast Christmas 2026",
+    "start": "2026-12-23T08:00:00-05:00",
+    "end": "2027-01-02T21:30:00-05:00",
+    "travelers": 4,
+    "buffer": "2027-01-03"
   },
   "sync": {
-    "source": "Gmail via ChatGPT",
-    "lastChecked": "2026-09-17 13:36 ET",
-    "mode": "hourly",
+    "source": "ChatGPT / GitHub",
+    "lastChecked": "2026-09-17 13:51 ET",
+    "mode": "manual",
     "privacy": "public-safe-fields-only"
   },
+  "bookings": [
+    {
+      "type": "flight",
+      "label": "Outbound flight",
+      "status": "STILL NEEDED",
+      "from": "PHL",
+      "to": "SFO",
+      "date": "2026-12-23",
+      "depart": "待确认",
+      "arrive": "待确认",
+      "flightNumber": "待确认",
+      "nonstop": true,
+      "detail": "Route B 当前重点方案；优先 PHL → SFO nonstop。"
+    },
+    {
+      "type": "flight",
+      "label": "California flight",
+      "status": "STILL NEEDED",
+      "from": "SJC",
+      "to": "LAX",
+      "date": "2026-12-26",
+      "depart": "待确认",
+      "arrive": "待确认",
+      "flightNumber": "待确认",
+      "nonstop": true,
+      "detail": "San Jose → Los Angeles 短途转场。"
+    },
+    {
+      "type": "flight",
+      "label": "Return flight",
+      "status": "STILL NEEDED",
+      "from": "LAX",
+      "to": "PHL",
+      "date": "2027-01-02",
+      "depart": "待确认",
+      "arrive": "待确认",
+      "flightNumber": "待确认",
+      "nonstop": true,
+      "detail": "目标 1/2 回到费城地区，1/3 保留 buffer。"
+    },
+    {
+      "type": "hotel",
+      "label": "Los Angeles stay",
+      "status": "STILL NEEDED",
+      "name": "Thousand Oaks / Westlake Village",
+      "checkIn": "2026-12-26",
+      "checkOut": "2027-01-02",
+      "nights": 7,
+      "address": "待确认",
+      "detail": "优先一个住宿基地，减少一家四口搬运行李。"
+    },
+    {
+      "type": "stay",
+      "label": "San Jose stay",
+      "status": "STILL NEEDED",
+      "name": "San Jose",
+      "checkIn": "2026-12-23",
+      "checkOut": "2026-12-26",
+      "nights": 3,
+      "address": "待确认",
+      "detail": "朋友家或酒店仍待确认。"
+    },
+    {
+      "type": "car",
+      "label": "Rental car",
+      "status": "STILL NEEDED",
+      "name": "Family-size vehicle",
+      "pickup": "Bay Area / LA 待定",
+      "dropoff": "LAX 待定",
+      "detail": "车型、儿童座椅与是否 one-way 仍待确认。"
+    }
+  ],
   "reservations": []
 }
