@@ -1,18 +1,115 @@
 (()=>{
 const $=id=>document.getElementById(id);
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
 const pillClass=s=>s==='BOOKED'||s==='PAID'?'ok':s==='CONSIDERING'?'warn':'need';
-const iconFor=t=>({flight:'✈️',hotel:'🏨',stay:'🏠',car:'🚗',activity:'🎟️'})[t]||'📌';
+const iconFor=t=>({flight:'✈️',hotel:'🏨',stay:'🏠',car:'🚗',activity:'🎟️',restaurant:'🍽️'})[t]||'📌';
 const mapUrl=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q||'');
-function addStyles(){const s=document.createElement('style');s.textContent=`
-.booking.live{padding:17px}.live .booking-name{font-size:12px;text-transform:uppercase;letter-spacing:.06em;font-weight:900}.live .bigrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:12px}.live .airport{font-size:30px}.live .timepair{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}.live .timepair b{font-size:16px}.live .timepair span{font-size:11px;color:var(--muted)}.live .hotel-dates{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-top:12px}.live .hotel-dates b{font-size:15px}.live .hotel-dates small{font-size:10px;color:var(--muted);display:block;margin-bottom:3px}.live .nights{font-size:11px;color:var(--muted);white-space:nowrap}.live .card-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.live .mini-btn{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:999px;padding:7px 10px;text-decoration:none;color:var(--text);font-size:11px;font-weight:800}.event.is-past{opacity:.46}.event.is-next{background:color-mix(in srgb,var(--accent) 8%,transparent);margin:4px -6px;padding:11px 6px;border-radius:12px}.event.is-next .event-title:after{content:'  NEXT';font-size:9px;color:var(--accent);font-weight:950}.today-banner{margin:12px 0 0;padding:10px 12px;border-radius:14px;background:color-mix(in srgb,var(--accent) 9%,var(--card));font-size:12px;font-weight:850;color:var(--accent)}
-`;document.head.appendChild(s)}
-function renderBookings(data){const grid=$('bookingGrid');if(!grid||!data.bookings)return;grid.innerHTML=data.bookings.map(x=>{
-const cls=pillClass(x.status),icon=iconFor(x.type);
-if(x.type==='flight')return `<div class="card booking live route-flight"><div class="booking-top"><span class="booking-icon">${icon}</span><span class="pill ${cls}">${x.status}</span></div><div class="booking-name">${x.label}</div><div class="bigrow"><div><div class="airport">${x.from}</div><div class="booking-sub">${x.date}</div></div><div style="font-size:18px">✈️</div><div style="text-align:right"><div class="airport">${x.to}</div><div class="booking-sub">${x.nonstop?'NONSTOP':'连接待定'}</div></div></div><div class="timepair"><div><span>DEPART</span><b>${x.depart}</b></div><div>→</div><div style="text-align:right"><span>ARRIVE</span><b>${x.arrive}</b></div></div><div class="booking-sub">${x.flightNumber} · ${x.detail}</div></div>`;
-if(x.type==='hotel'||x.type==='stay')return `<div class="card booking live"><div class="booking-top"><span class="booking-icon">${icon}</span><span class="pill ${cls}">${x.status}</span></div><div class="booking-name">${x.label}</div><div class="booking-main">${x.name}</div><div class="hotel-dates"><div><small>CHECK-IN</small><b>${x.checkIn}</b></div><div class="nights">${x.nights} nights</div><div style="text-align:right"><small>CHECK-OUT</small><b>${x.checkOut}</b></div></div><div class="booking-sub">${x.detail}</div>${x.address&&x.address!=='待确认'?`<div class="card-actions"><a class="mini-btn" href="${mapUrl(x.address)}" target="_blank" rel="noreferrer">📍 导航</a></div>`:''}</div>`;
-return `<div class="card booking live"><div class="booking-top"><span class="booking-icon">${icon}</span><span class="pill ${cls}">${x.status}</span></div><div class="booking-name">${x.label}</div><div class="booking-main">${x.name||'待确认'}</div><div class="booking-sub">${x.detail||''}</div></div>`
-}).join('')}
-function updateTodayMode(){try{const now=Date.now();const events=allEvents();const next=events.find(e=>new Date(e.iso).getTime()>now);document.querySelectorAll('.event').forEach(el=>el.classList.remove('is-past','is-next'));const rows=[...document.querySelectorAll('.event')];rows.forEach((el,i)=>{const ev=events[i];if(!ev)return;const t=new Date(ev.iso).getTime();if(t<now)el.classList.add('is-past');if(next&&ev.iso===next.iso)el.classList.add('is-next')});const hero=$('today');if(hero&&!document.getElementById('todayModeBanner')){const b=document.createElement('div');b.id='todayModeBanner';b.className='today-banner';hero.appendChild(b)}const b=document.getElementById('todayModeBanner');if(b){const start=new Date('2026-12-23T08:00:00-05:00').getTime(),end=new Date('2027-01-02T21:30:00-05:00').getTime();b.textContent=now<start?'旅行前模式 · 当前显示下一项计划':now>end?'旅行已结束 · 行程保留为记录':'TODAY MODE · 已完成项目自动变灰，下一项高亮'}}catch(e){}}
-async function boot(){addStyles();try{const r=await fetch('./trip-data.json?ts='+Date.now(),{cache:'no-store'});const d=await r.json();renderBookings(d)}catch(e){}updateTodayMode();setInterval(updateTodayMode,30000)}
+
+function addStyles(){
+  if(document.getElementById('liveDashboardStyles'))return;
+  const s=document.createElement('style');
+  s.id='liveDashboardStyles';
+  s.textContent=`
+.booking.live{padding:17px}.live .booking-name{font-size:12px;text-transform:uppercase;letter-spacing:.06em;font-weight:900}.live .bigrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:12px}.live .airport{font-size:30px}.live .timepair{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}.live .timepair b{font-size:16px}.live .timepair span{font-size:11px;color:var(--muted)}.live .hotel-dates{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-top:12px}.live .hotel-dates b{font-size:15px}.live .hotel-dates small{font-size:10px;color:var(--muted);display:block;margin-bottom:3px}.live .nights{font-size:11px;color:var(--muted);white-space:nowrap}.live .card-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.live .mini-btn{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:999px;padding:7px 10px;text-decoration:none;color:var(--text);font-size:11px;font-weight:800;background:transparent;cursor:pointer}.live .mini-btn:hover{border-color:color-mix(in srgb,var(--purple) 45%,var(--line));color:var(--purple)}
+.event.is-past{opacity:.46}.event.is-next{background:color-mix(in srgb,var(--accent,var(--purple)) 8%,transparent);margin:4px -6px;padding:11px 6px;border-radius:12px}.event.is-next .event-title:after{content:'  NEXT';font-size:9px;color:var(--accent,var(--purple));font-weight:950}.today-banner{margin:12px 0 0;padding:10px 12px;border-radius:14px;background:color-mix(in srgb,var(--accent,var(--purple)) 9%,var(--card));font-size:12px;font-weight:850;color:var(--accent,var(--purple))}
+.trip-ops{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 11px}.trip-op{padding:13px 12px;border-radius:18px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow-soft);backdrop-filter:blur(18px);min-width:0}.trip-op-label{font-size:9px;color:var(--muted);font-weight:900;letter-spacing:.08em;text-transform:uppercase}.trip-op-value{font-size:21px;line-height:1.05;font-weight:950;margin-top:5px;letter-spacing:-.04em}.trip-op-value.good{color:var(--green)}.trip-op-value.attn{color:var(--red)}.sync-panel{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 13px;margin:0 0 12px;border:1px solid var(--line);border-radius:17px;background:color-mix(in srgb,var(--card-solid) 62%,transparent)}.sync-copy{min-width:0}.sync-title{font-size:11px;font-weight:950}.sync-sub{font-size:10px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sync-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:6px;box-shadow:0 0 0 4px color-mix(in srgb,var(--green) 12%,transparent)}.refresh-live{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:999px;padding:7px 10px;font-size:10px;font-weight:900;cursor:pointer;white-space:nowrap}.refresh-live.is-loading{opacity:.55;pointer-events:none}.car-route{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-top:13px;padding-top:12px;border-top:1px solid var(--line)}.car-route small{display:block;color:var(--muted);font-size:9px;letter-spacing:.08em;margin-bottom:4px}.car-route b{font-size:13px}.booking-empty{padding:22px;text-align:center;color:var(--muted);font-size:12px}.sync-source{font-weight:800;color:var(--text)}
+@media(max-width:560px){.trip-ops{grid-template-columns:repeat(3,1fr);gap:6px}.trip-op{padding:11px 9px;border-radius:15px}.trip-op-value{font-size:18px}.sync-panel{align-items:flex-start}.sync-sub{white-space:normal}.live .airport{font-size:26px}}
+`;
+  document.head.appendChild(s);
+}
+
+function statusCounts(bookings=[]){
+  const done=bookings.filter(x=>x.status==='BOOKED'||x.status==='PAID').length;
+  const needed=bookings.filter(x=>x.status==='STILL NEEDED').length;
+  const considering=bookings.filter(x=>x.status==='CONSIDERING').length;
+  return {done,needed,considering,total:bookings.length};
+}
+
+function ensureOpsPanel(data){
+  const grid=$('bookingGrid');
+  if(!grid)return;
+  let host=document.getElementById('tripOpsDashboard');
+  if(!host){
+    host=document.createElement('div');
+    host.id='tripOpsDashboard';
+    grid.parentNode.insertBefore(host,grid);
+  }
+  const c=statusCounts(data.bookings||[]);
+  const mode=(data.sync?.mode||'manual').toLowerCase();
+  const modeLabel=mode==='auto'||mode==='automatic'?'AUTO SYNC':'MANUAL SYNC';
+  host.innerHTML=`
+    <div class="trip-ops" aria-label="Trip booking status">
+      <div class="trip-op"><div class="trip-op-label">Booked / Paid</div><div class="trip-op-value good">${c.done}</div></div>
+      <div class="trip-op"><div class="trip-op-label">Still Needed</div><div class="trip-op-value ${c.needed?'attn':''}">${c.needed}</div></div>
+      <div class="trip-op"><div class="trip-op-label">Total Items</div><div class="trip-op-value">${c.total}</div></div>
+    </div>
+    <div class="sync-panel">
+      <div class="sync-copy">
+        <div class="sync-title"><span class="sync-dot"></span>${modeLabel}</div>
+        <div class="sync-sub"><span class="sync-source">${esc(data.sync?.source||'GitHub')}</span> · Last checked ${esc(data.sync?.lastChecked||'—')}</div>
+      </div>
+      <button class="refresh-live" id="refreshLiveData" type="button" aria-label="Refresh trip data">↻ Refresh</button>
+    </div>`;
+  const btn=$('refreshLiveData');
+  if(btn)btn.onclick=()=>loadData(true);
+}
+
+function renderBookings(data){
+  const grid=$('bookingGrid');
+  if(!grid)return;
+  const items=data.bookings||[];
+  ensureOpsPanel(data);
+  if(!items.length){grid.innerHTML='<div class="card booking-empty">还没有 booking 数据。</div>';return;}
+  grid.innerHTML=items.map(x=>{
+    const cls=pillClass(x.status),icon=iconFor(x.type),status=esc(x.status||'STILL NEEDED');
+    if(x.type==='flight')return `<div class="card booking live route-flight"><div class="booking-top"><span class="booking-icon">${icon}</span><span class="pill ${cls}">${status}</span></div><div class="booking-name">${esc(x.label)}</div><div class="bigrow"><div><div class="airport">${esc(x.from)}</div><div class="booking-sub">${esc(x.date)}</div></div><div style="font-size:18px">✈️</div><div style="text-align:right"><div class="airport">${esc(x.to)}</div><div class="booking-sub">${x.nonstop?'NONSTOP':'连接待定'}</div></div></div><div class="timepair"><div><span>DEPART</span><b>${esc(x.depart)}</b></div><div>→</div><div style="text-align:right"><span>ARRIVE</span><b>${esc(x.arrive)}</b></div></div><div class="booking-sub">${esc(x.flightNumber)} · ${esc(x.detail)}</div></div>`;
+    if(x.type==='hotel'||x.type==='stay')return `<div class="card booking live"><div class="booking-top"><span class="booking-icon">${icon}</span><span class="pill ${cls}">${status}</span></div><div class="booking-name">${esc(x.label)}</div><div class="booking-main">${esc(x.name)}</div><div class="hotel-dates"><div><small>CHECK-IN</small><b>${esc(x.checkIn)}</b></div><div class="nights">${esc(x.nights)} nights</div><div style="text-align:right"><small>CHECK-OUT</small><b>${esc(x.checkOut)}</b></div></div><div class="booking-sub">${esc(x.detail)}</div>${x.address&&x.address!=='待确认'?`<div class="card-actions"><a class="mini-btn" href="${mapUrl(x.address)}" target="_blank" rel="noreferrer">📍 导航</a></div>`:''}</div>`;
+    if(x.type==='car')return `<div class="card booking live"><div class="booking-top"><span class="booking-icon">${icon}</span><span class="pill ${cls}">${status}</span></div><div class="booking-name">${esc(x.label)}</div><div class="booking-main">${esc(x.name||'Rental car')}</div><div class="car-route"><div><small>PICKUP</small><b>${esc(x.pickup||'待确认')}</b></div><div>→</div><div style="text-align:right"><small>DROP-OFF</small><b>${esc(x.dropoff||'待确认')}</b></div></div><div class="booking-sub">${esc(x.detail||'')}</div></div>`;
+    return `<div class="card booking live"><div class="booking-top"><span class="booking-icon">${icon}</span><span class="pill ${cls}">${status}</span></div><div class="booking-name">${esc(x.label)}</div><div class="booking-main">${esc(x.name||'待确认')}</div><div class="booking-sub">${esc(x.detail||'')}</div></div>`;
+  }).join('');
+}
+
+function updateTodayMode(){
+  try{
+    const now=Date.now();
+    const events=typeof allEvents==='function'?allEvents():[];
+    const next=events.find(e=>new Date(e.iso).getTime()>now);
+    document.querySelectorAll('.event').forEach(el=>el.classList.remove('is-past','is-next'));
+    const rows=[...document.querySelectorAll('.event')];
+    rows.forEach((el,i)=>{const ev=events[i];if(!ev)return;const t=new Date(ev.iso).getTime();if(t<now)el.classList.add('is-past');if(next&&ev.iso===next.iso)el.classList.add('is-next')});
+    const hero=$('today');
+    if(hero&&!document.getElementById('todayModeBanner')){const b=document.createElement('div');b.id='todayModeBanner';b.className='today-banner';hero.appendChild(b)}
+    const b=document.getElementById('todayModeBanner');
+    if(b){const start=new Date('2026-12-23T08:00:00-05:00').getTime(),end=new Date('2027-01-02T21:30:00-05:00').getTime();b.textContent=now<start?'旅行前模式 · 当前显示下一项计划':now>end?'旅行已结束 · 行程保留为记录':'TODAY MODE · 已完成项目自动变灰，下一项高亮'}
+  }catch(e){}
+}
+
+let loading=false;
+async function loadData(fromButton=false){
+  if(loading)return;
+  loading=true;
+  const btn=$('refreshLiveData');
+  if(btn){btn.classList.add('is-loading');btn.textContent='Refreshing…'}
+  try{
+    const r=await fetch('./trip-data.json?ts='+Date.now(),{cache:'no-store'});
+    if(!r.ok)throw new Error('trip-data.json '+r.status);
+    const d=await r.json();
+    renderBookings(d);
+  }catch(e){
+    console.warn('Family Travel OS live data unavailable',e);
+    if(fromButton&&btn){btn.textContent='Retry'}
+  }finally{
+    loading=false;
+    const nextBtn=$('refreshLiveData');
+    if(nextBtn){nextBtn.classList.remove('is-loading');nextBtn.textContent='↻ Refresh'}
+  }
+}
+
+async function boot(){
+  addStyles();
+  await loadData(false);
+  updateTodayMode();
+  setInterval(updateTodayMode,30000);
+}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
