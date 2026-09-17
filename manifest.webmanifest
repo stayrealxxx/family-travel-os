@@ -7,8 +7,8 @@
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#0e1b2c",
-  "theme_color": "#112b43",
+  "background_color": "#edf4f9",
+  "theme_color": "#edf4f9",
   "lang": "zh-CN",
   "icons": [
     {"src":"./christmas-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
