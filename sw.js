@@ -1,5 +1,5 @@
-const CACHE='family-travel-os-v19';
-const CORE=['./','./index.html','./manifest.webmanifest','./christmas-icon.svg','./trip-data.json','./countdown-lab.js','./weather.js','./site-theme.js','./app-live.js','./preferences.js'];
+const CACHE='family-travel-os-v20';
+const CORE=['./','./index.html','./manifest.webmanifest','./christmas-icon.svg','./trip-data.json','./countdown-lab.js','./weather.js','./site-theme.js','./app-live.js','./preferences-v2.js'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));
 });
@@ -12,12 +12,12 @@ async function withEnhancements(response){
   const countdown='<script src="./countdown-lab.js"></script>';
   const weather='<script src="./weather.js"></script>';
   const live='<script src="./app-live.js"></script>';
-  const preferences='<script src="./preferences.js"></script>';
+  const preferences='<script src="./preferences-v2.js"></script>';
   let html=text.includes('site-theme.js')?text:text.replace('</head>',theme+'</head>');
   html=html.includes('countdown-lab.js')?html:html.replace('</body>',countdown+'</body>');
   html=html.includes('weather.js')?html:html.replace('</body>',weather+'</body>');
   html=html.includes('app-live.js')?html:html.replace('</body>',live+'</body>');
-  html=html.includes('preferences.js')?html:html.replace('</body>',preferences+'</body>');
+  html=html.includes('preferences-v2.js')?html:html.replace('</body>',preferences+'</body>');
   return new Response(html,{status:response.status,statusText:response.statusText,headers:{'Content-Type':'text/html; charset=utf-8'}});
 }
 self.addEventListener('fetch',event=>{
