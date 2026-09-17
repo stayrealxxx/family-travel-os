@@ -4,6 +4,31 @@
 
   const style=document.createElement('style');
   style.textContent=`
+  /* Keep the entire app in the same visual family as Journey Ring. */
+  body{background:
+    radial-gradient(circle at 50% -10%,rgba(83,214,255,.16),transparent 34%),
+    radial-gradient(circle at 95% 34%,rgba(37,126,153,.10),transparent 30%),
+    linear-gradient(180deg,#eaf5f7 0%,#f5f8fb 48%,#edf4f6 100%) fixed!important;
+    transition:background .35s ease}
+  body:before{background:radial-gradient(circle,rgba(83,214,255,.34),transparent 68%)!important;opacity:.20!important}
+  body:after{background:radial-gradient(circle,rgba(55,129,160,.30),transparent 68%)!important;opacity:.18!important}
+  .aurora{background:
+    radial-gradient(circle at 82% 8%,rgba(83,214,255,.14),transparent 25%),
+    radial-gradient(circle at 8% 55%,rgba(32,115,133,.09),transparent 29%),
+    linear-gradient(180deg,rgba(17,43,67,.04),transparent 31%)!important}
+  [data-theme="dark"] body{background:
+    radial-gradient(circle at 50% -8%,rgba(83,214,255,.12),transparent 30%),
+    radial-gradient(circle at 92% 32%,rgba(27,97,118,.18),transparent 34%),
+    linear-gradient(180deg,#08131f 0%,#0b1724 46%,#0d1d2b 100%) fixed!important}
+  [data-theme="dark"] body:before{background:radial-gradient(circle,rgba(83,214,255,.24),transparent 68%)!important;opacity:.20!important}
+  [data-theme="dark"] body:after{background:radial-gradient(circle,rgba(71,111,199,.22),transparent 68%)!important;opacity:.18!important}
+  [data-theme="dark"] .aurora{background:
+    radial-gradient(circle at 82% 8%,rgba(83,214,255,.10),transparent 26%),
+    radial-gradient(circle at 8% 55%,rgba(34,123,143,.11),transparent 30%),
+    linear-gradient(180deg,rgba(17,43,67,.10),transparent 34%)!important}
+  .top:before{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 82%,#dff2f6 18%) 68%,transparent)!important}
+  [data-theme="dark"] .top:before{background:linear-gradient(180deg,rgba(9,20,32,.95) 68%,transparent)!important}
+
   .hero.cd-mode-d{background:linear-gradient(160deg,#0e1b2c,#112b43 55%,#103a47);border-color:rgba(94,213,255,.16);box-shadow:0 24px 68px rgba(4,23,39,.34);color:#f4fbff;overflow:hidden}
   .hero.cd-mode-d:before,.hero.cd-mode-d:after{display:none}.hero.cd-mode-d .countdown{display:none}
   .hero.cd-mode-d .eyebrow,.hero.cd-mode-d .hero-sub,.hero.cd-mode-d .progress-top,.hero.cd-mode-d .next-main span{color:#9fb9c8}
@@ -21,6 +46,14 @@
   @media(prefers-reduced-motion:reduce){.journey-plane{animation:none!important}}
   `;
   document.head.appendChild(style);
+
+  function syncBrowserChrome(){
+    const dark=document.documentElement.dataset.theme==='dark';
+    const meta=document.querySelector('meta[name="theme-color"]');
+    if(meta) meta.setAttribute('content',dark?'#08131f':'#dfeff3');
+  }
+  syncBrowserChrome();
+  new MutationObserver(syncBrowserChrome).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 
   hero.classList.add('cd-mode-d');
   localStorage.setItem('travel.countdownPreview','d');
