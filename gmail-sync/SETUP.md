@@ -8,6 +8,19 @@ Gmail → Google Apps Script → parser/matcher → GitHub Contents API → `tri
 
 The public website never receives your Gmail credentials, GitHub token, reservation confirmation number, or raw email body. Confirmation codes are hashed before a public-safe source key is written.
 
+## Current engine: 1.2.0
+
+Version 1.2 adds:
+
+- a script lock so overlapping 15-minute trigger executions cannot race each other;
+- one automatic retry if GitHub reports a write conflict (`409`);
+- versioned seen-message state so parser upgrades can safely re-check recent messages once;
+- rental-car matching by pickup/drop-off dates and airport/location evidence, rather than the first unbooked car;
+- stable booking IDs are preserved when an auto-sync updates a planned item;
+- `getSyncHealth()` for checking the last Apps Script scan without creating a GitHub commit.
+
+This is important for the current trip because it has two separate rental-car segments.
+
 ## What it currently recognizes
 
 Strong rules are included for:
@@ -33,6 +46,19 @@ Unknown or incompletely parsed travel emails are not blindly written into the tr
 The sync engine only writes a booking when it can associate it with the active trip window in `trip-data.json` (with a small date buffer). This prevents unrelated hotel stays, restaurant reservations, old trips, and payment-confirmation emails from entering the dashboard.
 
 The GitHub token must be stored in **Google Apps Script → Project Settings → Script Properties**. Never paste it into `Code.gs`, `trip-data.json`, or any other repository file.
+
+## Upgrade an existing installation
+
+If the Apps Script project is already installed and its 15-minute trigger is already active:
+
+1. Open the existing `Family Travel OS Sync` project at `script.google.com`.
+2. Replace the entire contents of `Code.gs` with the current repository `gmail-sync/Code.gs`.
+3. Save.
+4. Run `testGitHubConnection` once. The log should show `engine: "1.2.0"`.
+5. Run `syncTravelOs` once.
+6. Optionally run `getSyncHealth()` to confirm the scan timestamp and review count.
+
+You do **not** need to recreate the trigger because it still calls the same `syncTravelOs` function.
 
 ## 1. Create a fine-grained GitHub token
 
@@ -97,9 +123,11 @@ After the first successful sync, `trip-data.json` will report:
 
 - `sync.source = "Gmail → Google Apps Script → GitHub"`
 - `sync.mode = "auto"`
-- last sync activity/result
+- last sync write/result
 
-The existing Family Travel OS dashboard will then render newly recognized reservations as `BOOKED` and reduce the `STILL NEEDED` count automatically.
+The dashboard separately states that Gmail scans every 15 minutes. A scan with no booking changes intentionally does not create a GitHub commit.
+
+The Family Travel OS dashboard renders recognized reservations as `BOOKED`, reduces the `STILL NEEDED` count, and now mirrors booking status into the related checklist item.
 
 ## Important privacy boundary
 
