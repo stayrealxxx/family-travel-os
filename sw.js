@@ -1,5 +1,5 @@
-const CACHE='family-travel-os-v22';
-const CORE=['./','./index.html','./manifest.webmanifest','./christmas-icon.svg','./trip-data.json','./itinerary-v2.js','./countdown-lab.js','./weather-v2.js','./site-theme.js','./app-live-v2.js','./preferences-v3.js'];
+const CACHE='family-travel-os-v23';
+const CORE=['./','./index.html','./manifest.webmanifest','./christmas-icon.svg','./trip-data.json','./itinerary-v2.js','./countdown-lab.js','./weather-v2.js','./site-theme.js','./app-live-v2.js','./preferences-v3.js','./ui-sync-v2.js'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));
 });
@@ -14,12 +14,14 @@ async function withEnhancements(response){
   const weather='<script src="./weather-v2.js"></script>';
   const live='<script src="./app-live-v2.js"></script>';
   const preferences='<script src="./preferences-v3.js"></script>';
+  const uiSync='<script src="./ui-sync-v2.js"></script>';
   let html=text.includes('site-theme.js')?text:text.replace('</head>',theme+'</head>');
   html=html.includes('itinerary-v2.js')?html:html.replace('</body>',itinerary+'</body>');
   html=html.includes('countdown-lab.js')?html:html.replace('</body>',countdown+'</body>');
   html=html.includes('weather-v2.js')?html:html.replace('</body>',weather+'</body>');
   html=html.includes('app-live-v2.js')?html:html.replace('</body>',live+'</body>');
   html=html.includes('preferences-v3.js')?html:html.replace('</body>',preferences+'</body>');
+  html=html.includes('ui-sync-v2.js')?html:html.replace('</body>',uiSync+'</body>');
   return new Response(html,{status:response.status,statusText:response.statusText,headers:{'Content-Type':'text/html; charset=utf-8'}});
 }
 self.addEventListener('fetch',event=>{
