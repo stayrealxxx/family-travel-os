@@ -1,5 +1,5 @@
-const CACHE='family-travel-os-v24';
-const CORE=['./','./index.html','./manifest.webmanifest','./christmas-icon.svg','./trip-data.json','./itinerary-v2.js','./runtime-i18n.js','./countdown-lab.js','./weather-v3.js','./site-theme.js','./app-live-v3.js','./preferences-v3.js'];
+const CACHE='family-travel-os-v25';
+const CORE=['./','./index.html','./manifest.webmanifest','./christmas-icon.svg','./trip-data.json','./itinerary-v2.js','./runtime-i18n.js','./countdown-lab.js','./weather-v3.js','./site-theme.js','./app-live-v4.js','./preferences-v3.js'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));
 });
@@ -13,14 +13,14 @@ async function withEnhancements(response){
   const runtime='<script src="./runtime-i18n.js"></script>';
   const countdown='<script src="./countdown-lab.js"></script>';
   const weather='<script src="./weather-v3.js"></script>';
-  const live='<script src="./app-live-v3.js"></script>';
+  const live='<script src="./app-live-v4.js"></script>';
   const preferences='<script src="./preferences-v3.js"></script>';
   let html=text.includes('site-theme.js')?text:text.replace('</head>',theme+'</head>');
   html=html.includes('itinerary-v2.js')?html:html.replace('</body>',itinerary+'</body>');
   html=html.includes('runtime-i18n.js')?html:html.replace('</body>',runtime+'</body>');
   html=html.includes('countdown-lab.js')?html:html.replace('</body>',countdown+'</body>');
   html=html.includes('weather-v3.js')?html:html.replace('</body>',weather+'</body>');
-  html=html.includes('app-live-v3.js')?html:html.replace('</body>',live+'</body>');
+  html=html.includes('app-live-v4.js')?html:html.replace('</body>',live+'</body>');
   html=html.includes('preferences-v3.js')?html:html.replace('</body>',preferences+'</body>');
   return new Response(html,{status:response.status,statusText:response.statusText,headers:{'Content-Type':'text/html; charset=utf-8'}});
 }
