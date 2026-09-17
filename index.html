@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f8fa" />
+  <title>Family Travel OS · West Coast Christmas 2026</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">FAMILY TRAVEL OS</div>
+        <h1 id="tripTitle">West Coast Christmas 2026</h1>
+      </div>
+      <button id="themeToggle" class="icon-btn" aria-label="切换深色模式">🌙</button>
+    </header>
+
+    <main>
+      <section class="hero card">
+        <div class="hero-title-row">
+          <div>
+            <div class="trip-dates" id="tripDates"></div>
+            <div class="trip-meta" id="tripMeta"></div>
+          </div>
+          <span class="status-pill status-considering">CONSIDERING</span>
+        </div>
+        <div class="route-selector" id="routeSelector"></div>
+        <p class="route-note" id="routeNote"></p>
+      </section>
+
+      <section class="status-grid" id="statusGrid"></section>
+
+      <section class="card next-card">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">NEXT</div>
+            <h2 id="nextTitle"></h2>
+          </div>
+          <div class="countdown" id="countdown"></div>
+        </div>
+        <div class="next-detail" id="nextDetail"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">ROUTE</div>
+            <h2>路线总览</h2>
+          </div>
+          <a id="mapsLink" class="text-link" target="_blank" rel="noreferrer">打开地图 ↗</a>
+        </div>
+        <div class="route-visual" id="routeVisual"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">ITINERARY</div>
+            <h2>每日行程</h2>
+          </div>
+          <span class="muted" id="timelineLabel"></span>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">CHECKLIST</div>
+            <h2>出发前待办</h2>
+          </div>
+          <button id="resetChecklist" class="text-btn">重置</button>
+        </div>
+        <div class="checklist" id="checklist"></div>
+      </section>
+
+      <section class="card compact-card">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">DECISION LOG</div>
+            <h2>规划状态</h2>
+          </div>
+        </div>
+        <div class="decision-list" id="decisionList"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div>Planning only · No booking authorization</div>
+      <div id="lastUpdated"></div>
+    </footer>
+  </div>
+
+  <script src="trip-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
