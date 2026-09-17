@@ -5,7 +5,7 @@
   },
   "sync": {
     "source": "Gmail via ChatGPT",
-    "lastChecked": "2026-09-17 12:11 ET",
+    "lastChecked": "2026-09-17 12:21 ET",
     "mode": "hourly",
     "privacy": "public-safe-fields-only"
   },
