@@ -12,27 +12,135 @@
   },
   "sync": {
     "source": "Gmail → Google Apps Script → GitHub",
-    "lastChecked": "2026-09-17 20:24 EDT",
+    "lastChecked": "2026-09-17 20:50 EDT",
     "mode": "auto",
     "privacy": "public-safe-fields-only",
-    "lastResult": "0 changes · 0 review",
+    "lastResult": "2 changes · 0 review",
     "engine": "gmail-sync/1.2.0",
     "pollIntervalMinutes": 15,
-    "lastWriteAt": "2026-09-17 20:24 EDT"
+    "lastWriteAt": "2026-09-17 20:50 EDT"
   },
   "bookings": [
-    {"id":"flight-outbound","type":"flight","label":"Outbound flight","status":"STILL NEEDED","from":"PHL","to":"SFO","date":"2026-12-24","depart":"待确认","arrive":"待确认","flightNumber":"待确认","nonstop":true,"detail":"12/24 从家开车到 PHL；优先 PHL → SFO nonstop，避免过早起飞。"},
-    {"id":"car-bay-area","type":"car","label":"Bay Area rental car","status":"STILL NEEDED","name":"Family-size vehicle","pickup":"SFO","dropoff":"SFO / SJC","pickupDate":"2026-12-24","dropoffDate":"2026-12-28","detail":"SFO 落地后取车开往 San Jose；12/28 根据加州段航班从 SFO 或 SJC 还车。"},
-    {"id":"hotel-san-jose","type":"hotel","label":"San Jose stay","status":"STILL NEEDED","name":"San Jose hotel","checkIn":"2026-12-24","checkOut":"2026-12-28","nights":4,"address":"待确认","detail":"连续住 4 晚；优先家庭便利、停车方便并减少换酒店。"},
-    {"id":"flight-california","type":"flight","label":"California flight","status":"STILL NEEDED","from":"SFO/SJC","to":"LAX/BUR","date":"2026-12-28","depart":"待确认","arrive":"待确认","flightNumber":"待确认","nonstop":true,"detail":"比较 SFO vs SJC 出发、LAX vs BUR 抵达；按总成本和到 Thousand Oaks 的实际时间决定。"},
-    {"id":"car-southern-california","type":"car","label":"Southern California rental car","status":"STILL NEEDED","name":"Family-size vehicle","pickup":"LAX / BUR","dropoff":"LAX","pickupDate":"2026-12-28","dropoffDate":"2027-01-02","detail":"抵达南加州后取车；1/2 在 LAX 还车后搭乘返程航班。"},
-    {"id":"hotel-thousand-oaks","type":"hotel","label":"Thousand Oaks stay","status":"STILL NEEDED","name":"Thousand Oaks / Westlake Village","checkIn":"2026-12-28","checkOut":"2027-01-02","nights":5,"address":"待确认","detail":"住在朋友家附近连续 5 晚；优先房间空间、早餐、停车和家庭便利。"},
-    {"id":"flight-return","type":"flight","label":"Return flight","status":"STILL NEEDED","from":"LAX","to":"PHL","date":"2027-01-02","depart":"待确认","arrive":"待确认","flightNumber":"待确认","nonstop":true,"detail":"1/2 LAX 还车后飞回 PHL；取自家车开回家，1/3 保留 buffer。"},
-    {"id":"parking-phl","type":"parking","label":"PHL parking","status":"STILL NEEDED","name":"PHL airport parking","startDate":"2026-12-24","endDate":"2027-01-02","detail":"12/24 自驾到 PHL 后停车；1/2 返回 PHL 后取车直接回家。"}
+    {
+      "id": "flight-outbound",
+      "type": "flight",
+      "label": "Outbound flight",
+      "status": "BOOKED",
+      "from": "LNS",
+      "to": "ORD",
+      "date": "2026-12-24",
+      "depart": "待确认",
+      "arrive": "待确认",
+      "flightNumber": "UA6055",
+      "nonstop": true,
+      "detail": "United Airlines · Gmail auto-sync",
+      "source": {
+        "provider": "United Airlines",
+        "key": "91786fcc537b453af75de593e71bb9b092d8dbf33592429b0d3d89198208af57",
+        "syncedAt": "2026-09-18T00:50:48.617Z"
+      }
+    },
+    {
+      "id": "car-bay-area",
+      "type": "car",
+      "label": "Bay Area rental car",
+      "status": "STILL NEEDED",
+      "name": "Family-size vehicle",
+      "pickup": "SFO",
+      "dropoff": "SFO / SJC",
+      "pickupDate": "2026-12-24",
+      "dropoffDate": "2026-12-28",
+      "detail": "SFO 落地后取车开往 San Jose；12/28 根据加州段航班从 SFO 或 SJC 还车。"
+    },
+    {
+      "id": "hotel-san-jose",
+      "type": "hotel",
+      "label": "San Jose stay",
+      "status": "STILL NEEDED",
+      "name": "San Jose hotel",
+      "checkIn": "2026-12-24",
+      "checkOut": "2026-12-28",
+      "nights": 4,
+      "address": "待确认",
+      "detail": "连续住 4 晚；优先家庭便利、停车方便并减少换酒店。"
+    },
+    {
+      "id": "flight-california",
+      "type": "flight",
+      "label": "California flight",
+      "status": "STILL NEEDED",
+      "from": "SFO/SJC",
+      "to": "LAX/BUR",
+      "date": "2026-12-28",
+      "depart": "待确认",
+      "arrive": "待确认",
+      "flightNumber": "待确认",
+      "nonstop": true,
+      "detail": "比较 SFO vs SJC 出发、LAX vs BUR 抵达；按总成本和到 Thousand Oaks 的实际时间决定。"
+    },
+    {
+      "id": "car-southern-california",
+      "type": "car",
+      "label": "Southern California rental car",
+      "status": "STILL NEEDED",
+      "name": "Family-size vehicle",
+      "pickup": "LAX / BUR",
+      "dropoff": "LAX",
+      "pickupDate": "2026-12-28",
+      "dropoffDate": "2027-01-02",
+      "detail": "抵达南加州后取车；1/2 在 LAX 还车后搭乘返程航班。"
+    },
+    {
+      "id": "hotel-thousand-oaks",
+      "type": "hotel",
+      "label": "Thousand Oaks stay",
+      "status": "STILL NEEDED",
+      "name": "Thousand Oaks / Westlake Village",
+      "checkIn": "2026-12-28",
+      "checkOut": "2027-01-02",
+      "nights": 5,
+      "address": "待确认",
+      "detail": "住在朋友家附近连续 5 晚；优先房间空间、早餐、停车和家庭便利。"
+    },
+    {
+      "id": "flight-return",
+      "type": "flight",
+      "label": "Return flight",
+      "status": "STILL NEEDED",
+      "from": "LAX",
+      "to": "PHL",
+      "date": "2027-01-02",
+      "depart": "待确认",
+      "arrive": "待确认",
+      "flightNumber": "待确认",
+      "nonstop": true,
+      "detail": "1/2 LAX 还车后飞回 PHL；取自家车开回家，1/3 保留 buffer。"
+    },
+    {
+      "id": "parking-phl",
+      "type": "parking",
+      "label": "PHL parking",
+      "status": "STILL NEEDED",
+      "name": "PHL airport parking",
+      "startDate": "2026-12-24",
+      "endDate": "2027-01-02",
+      "detail": "12/24 自驾到 PHL 后停车；1/2 返回 PHL 后取车直接回家。"
+    }
   ],
   "reservations": [],
   "planning": {
-    "locked": ["12/24 从 PHL 飞往 SFO","SFO 落地后租车前往 San Jose","San Jose 酒店作为第一段住宿基地","12/28 左右搭乘 Bay Area → Southern California 短途航班","Thousand Oaks 附近酒店连续住 5 晚","南加州使用第二段租车并在 LAX 还车","1/2 从 LAX 飞回 PHL，再自驾回家"],
-    "flex": ["Bay Area 出发机场：SFO 或 SJC","Southern California 抵达机场：LAX 或 BUR"]
+    "locked": [
+      "12/24 从 PHL 飞往 SFO",
+      "SFO 落地后租车前往 San Jose",
+      "San Jose 酒店作为第一段住宿基地",
+      "12/28 左右搭乘 Bay Area → Southern California 短途航班",
+      "Thousand Oaks 附近酒店连续住 5 晚",
+      "南加州使用第二段租车并在 LAX 还车",
+      "1/2 从 LAX 飞回 PHL，再自驾回家"
+    ],
+    "flex": [
+      "Bay Area 出发机场：SFO 或 SJC",
+      "Southern California 抵达机场：LAX 或 BUR"
+    ]
   }
 }
