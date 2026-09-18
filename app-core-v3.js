@@ -1,6 +1,6 @@
 (()=>{
 'use strict';
-const VERSION='5.3.0';
+const VERSION='5.4.0';
 const DATA_URL='./trip-data.json';
 const LANG_KEY='travel.language',THEME_KEY='travel.theme';
 const SUPPORTED=['zh-CN','zh-TW','en'];
