@@ -74,10 +74,14 @@ function updateText(){
   const ca=document.getElementById('routeMapCalifornia');
   const g=document.getElementById('routeMapGoogle');
   const note=document.getElementById('routeMapHint');
+  const drive=document.getElementById('routeLegendDrive');
+  const flight=document.getElementById('routeLegendFlight');
   if(full) full.textContent=c.full;
   if(ca) ca.textContent=c.california;
   if(g){g.textContent=c.openFull;g.href=fullCaliforniaUrl();}
   if(note) note.textContent=c.mapHint;
+  if(drive) drive.textContent=c.drive;
+  if(flight) flight.textContent=c.flight;
 }
 function renderLinks(){
   const host=document.getElementById('routeDriveLinks');
