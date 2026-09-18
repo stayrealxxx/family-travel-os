@@ -11,3 +11,28 @@
 /* detailed flight segment cards */
 .flight-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:8px}.flight-no{font-size:19px;font-weight:950;letter-spacing:-.02em;margin-top:4px}.flight-date{font-size:10px;color:var(--muted);font-weight:850;white-space:nowrap}.flight-route{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;margin-top:13px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.flight-time{font-size:16px;font-weight:900;margin-top:3px}.flight-arrow{font-size:18px;opacity:.72}.flight-meta{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.flight-meta>div,.flight-operator,.connection-callout{padding:9px 10px;border-radius:13px;background:color-mix(in srgb,var(--solid) 58%,transparent)}.flight-meta small,.flight-operator small,.connection-callout small{display:block;font-size:7px;color:var(--muted);font-weight:900;letter-spacing:.08em;text-transform:uppercase}.flight-meta b,.flight-operator b,.connection-callout b{display:block;font-size:10px;margin-top:3px;line-height:1.35}.flight-operator{margin-top:7px}.connection-callout{margin-top:7px;background:color-mix(in srgb,var(--cyan) 10%,var(--solid) 90%)}.connection-callout b{color:var(--cyan)}.flight-detail{padding-top:8px;margin-top:8px;border-top:1px solid var(--line)}
 @media(max-width:520px){.flight-no{font-size:17px}.flight-meta{grid-template-columns:1fr}.flight-route{gap:8px}.flight-time{font-size:15px}}
+
+/* interactive route map */
+.route-map-card{padding:15px}
+.route-map-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:10px}
+.route-map-view{display:flex;gap:6px;flex-wrap:wrap}
+.route-map-btn,.route-map-google{min-height:40px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:9px 12px;font:inherit;font-size:10px;font-weight:900;text-decoration:none;cursor:pointer}
+.route-map-btn{border:1px solid var(--line);background:color-mix(in srgb,var(--solid) 72%,transparent);color:var(--text)}
+.route-map-btn:focus-visible,.route-map-google:focus-visible,.route-nav-btn:focus-visible{outline:3px solid color-mix(in srgb,var(--cyan) 38%,transparent);outline-offset:2px}
+.route-map-google{border:1px solid color-mix(in srgb,var(--cyan) 28%,var(--line));background:color-mix(in srgb,var(--cyan) 10%,var(--solid));color:var(--text)}
+.route-map{height:360px;width:100%;margin-top:11px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#dfe8ec;z-index:0}
+.route-map .leaflet-control-container{font-family:inherit}
+.route-map .leaflet-popup-content-wrapper,.route-map .leaflet-popup-tip{background:var(--solid);color:var(--text)}
+.route-map .leaflet-popup-content{margin:11px 13px}
+.route-popup strong{display:block;font-size:12px}.route-popup div{font-size:9px;color:var(--muted);margin-top:2px}.route-popup a{display:inline-flex;margin-top:8px;text-decoration:none;font-size:10px;font-weight:900;color:var(--cyan)}
+.route-map-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:9px;font-size:9px;color:var(--muted)}
+.route-map-legend span{display:inline-flex;align-items:center;gap:6px}
+.route-line{display:inline-block;width:26px;height:0;border-top:4px solid #4da8b8;border-radius:999px}
+.route-line.flight{border-top:3px dashed #7476e8}
+.route-map-hint{font-size:9px;color:var(--muted);line-height:1.5;margin-top:8px}
+.route-drive-links{display:grid;grid-template-columns:1fr;gap:7px;margin-top:10px}
+.route-nav-btn{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:9px;min-height:46px;padding:9px 11px;border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--text);background:color-mix(in srgb,var(--solid) 66%,transparent)}
+.route-nav-btn>span{font-size:17px}.route-nav-btn b{font-size:10px}.route-nav-btn small{font-size:8px;color:var(--cyan);font-weight:900;text-align:right}
+.route-map-fallback{height:100%;display:grid;place-content:center;text-align:center;padding:24px;color:var(--muted);font-size:10px;line-height:1.5}
+@media(min-width:720px){.route-drive-links{grid-template-columns:repeat(2,minmax(0,1fr))}.route-map{height:430px}}
+@media(max-width:520px){.route-map{height:330px}.route-map-google{width:100%}.route-map-toolbar{align-items:stretch}.route-map-view{width:100%}.route-map-view .route-map-btn{flex:1}.route-nav-btn{grid-template-columns:auto 1fr}.route-nav-btn small{grid-column:2;text-align:left;margin-top:-4px}}
