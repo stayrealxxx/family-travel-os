@@ -8,7 +8,7 @@
     "travelers": 4,
     "buffer": null,
     "planStatus": "PRIMARY_PLAN",
-    "primaryRoute": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → LAX → ORD → LNS → Home",
+    "primaryRoute": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → Thousand Oaks → LAX → ORD → LNS → Home",
     "display": {
       "title": {
         "zh-CN": "西海岸圣诞公路之旅",
@@ -26,9 +26,9 @@
         "en": "West Coast Christmas Road Trip ✨"
       },
       "heroSubtitle": {
-        "zh-CN": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → LAX → ORD → LNS → Home",
-        "zh-TW": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → LAX → ORD → LNS → Home",
-        "en": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → LAX → ORD → LNS → Home"
+        "zh-CN": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → Thousand Oaks → LAX → ORD → LNS → Home",
+        "zh-TW": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → Thousand Oaks → LAX → ORD → LNS → Home",
+        "en": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → Thousand Oaks → LAX → ORD → LNS → Home"
       }
     },
     "routeNodes": [
@@ -55,6 +55,10 @@
       {
         "code": "SJC",
         "label": "San Jose"
+      },
+      {
+        "code": "TO",
+        "label": "Thousand Oaks"
       },
       {
         "code": "LAX",
@@ -174,21 +178,20 @@
       }
     },
     {
-      "id": "hotel-thousand-oaks",
+      "id": "hotel-thousand-oaks-1",
       "type": "hotel",
-      "label": "Thousand Oaks stay",
+      "label": "Thousand Oaks stay 1",
       "status": "STILL NEEDED",
       "name": "Thousand Oaks / Westlake Village",
       "checkIn": "2026-12-24",
       "checkOut": "2026-12-29",
       "nights": 5,
       "address": "待确认",
-      "detail": "PLANNED: 5 nights near friends. Prioritize room space, breakfast, parking, and family convenience.",
       "display": {
         "label": {
-          "zh-CN": "Thousand Oaks 住宿",
-          "zh-TW": "Thousand Oaks 住宿",
-          "en": "Thousand Oaks stay"
+          "zh-CN": "Thousand Oaks 住宿 · 第一段",
+          "zh-TW": "Thousand Oaks 住宿 · 第一段",
+          "en": "Thousand Oaks stay · Part 1"
         },
         "name": {
           "zh-CN": "Thousand Oaks / Westlake Village",
@@ -196,11 +199,12 @@
           "en": "Thousand Oaks / Westlake Village"
         },
         "detail": {
-          "zh-CN": "计划 5 晚；靠近朋友家，优先空间、早餐、停车和家庭便利。",
-          "zh-TW": "計劃 5 晚；靠近朋友家，優先空間、早餐、停車和家庭便利。",
-          "en": "Planned 5-night stay near friends; prioritize space, breakfast, parking, and family convenience."
+          "zh-CN": "计划 12/24–12/29 连住 5 晚；靠近朋友家。",
+          "zh-TW": "計劃 12/24–12/29 連住 5 晚；靠近朋友家。",
+          "en": "Planned Dec 24–29 for 5 nights near friends."
         }
-      }
+      },
+      "detail": "PLANNED: Dec 24–29, 5 nights near friends."
     },
     {
       "id": "hotel-san-jose",
@@ -209,10 +213,9 @@
       "status": "STILL NEEDED",
       "name": "San Jose hotel",
       "checkIn": "2026-12-29",
-      "checkOut": "2027-01-03",
-      "nights": 5,
+      "checkOut": "2026-12-31",
+      "nights": 2,
       "address": "待确认",
-      "detail": "PLANNED: 5 nights in the Bay Area after the northbound road-trip day. Avoid unnecessary hotel changes.",
       "display": {
         "label": {
           "zh-CN": "San Jose 住宿",
@@ -225,40 +228,41 @@
           "en": "San Jose hotel"
         },
         "detail": {
-          "zh-CN": "计划 5 晚；公路日之后以同一家酒店作为 Bay Area 基地。",
-          "zh-TW": "計劃 5 晚；公路日之後以同一家飯店作為 Bay Area 基地。",
-          "en": "Planned 5-night Bay Area base after the northbound road-trip day."
+          "zh-CN": "计划 12/29–12/31 住 2 晚；12/30 一个完整日。",
+          "zh-TW": "計劃 12/29–12/31 住 2 晚；12/30 一個完整日。",
+          "en": "Planned Dec 29–31 for 2 nights, with one full day on Dec 30."
         }
-      }
+      },
+      "detail": "PLANNED: Dec 29–31, 2 nights with one full San Jose day."
     },
     {
-      "id": "hotel-lax-airport",
+      "id": "hotel-thousand-oaks-2",
       "type": "hotel",
-      "label": "LAX airport night",
+      "label": "Thousand Oaks stay 2",
       "status": "STILL NEEDED",
-      "name": "LAX airport hotel",
-      "checkIn": "2027-01-03",
+      "name": "Thousand Oaks / Westlake Village",
+      "checkIn": "2026-12-31",
       "checkOut": "2027-01-04",
-      "nights": 1,
+      "nights": 4,
       "address": "待确认",
-      "detail": "PLANNED: stay near LAX before the 08:15 flight. Prefer hotel shuttle and easy rental-car return logistics.",
       "display": {
         "label": {
-          "zh-CN": "LAX 机场前夜",
-          "zh-TW": "LAX 機場前夜",
-          "en": "LAX airport night"
+          "zh-CN": "Thousand Oaks 住宿 · 第二段",
+          "zh-TW": "Thousand Oaks 住宿 · 第二段",
+          "en": "Thousand Oaks stay · Part 2"
         },
         "name": {
-          "zh-CN": "LAX 机场酒店",
-          "zh-TW": "LAX 機場飯店",
-          "en": "LAX airport hotel"
+          "zh-CN": "Thousand Oaks / Westlake Village",
+          "zh-TW": "Thousand Oaks / Westlake Village",
+          "en": "Thousand Oaks / Westlake Village"
         },
         "detail": {
-          "zh-CN": "计划 1/3 住一晚；优先机场 shuttle 和简单还车动线。",
-          "zh-TW": "計劃 1/3 住一晚；優先機場 shuttle 和簡單還車動線。",
-          "en": "Planned Jan 3 overnight; prioritize airport shuttle and simple rental-return logistics."
+          "zh-CN": "计划 12/31–1/4 再住 4 晚；如可行优先回到同一家酒店。",
+          "zh-TW": "計劃 12/31–1/4 再住 4 晚；如可行優先回到同一家飯店。",
+          "en": "Planned Dec 31–Jan 4 for 4 more nights; prefer the same hotel if practical."
         }
-      }
+      },
+      "detail": "PLANNED: Dec 31–Jan 4, 4 nights near friends."
     },
     {
       "id": "flight-return-1",
