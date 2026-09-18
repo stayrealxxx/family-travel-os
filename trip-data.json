@@ -322,33 +322,6 @@
           "en": "United Economy (T) · Meals are not offered on this flight."
         }
       }
-    },
-    {
-      "id": "parking-lns",
-      "type": "parking",
-      "label": "LNS parking",
-      "status": "STILL NEEDED",
-      "name": "Lancaster Airport parking",
-      "startDate": "2026-12-24",
-      "endDate": "2027-01-04",
-      "detail": "Drive to LNS on Dec 24, leave the family car, then pick it up after returning Jan 4.",
-      "display": {
-        "label": {
-          "zh-CN": "LNS 停车",
-          "zh-TW": "LNS 停車",
-          "en": "LNS parking"
-        },
-        "name": {
-          "zh-CN": "Lancaster Airport 停车",
-          "zh-TW": "Lancaster Airport 停車",
-          "en": "Lancaster Airport parking"
-        },
-        "detail": {
-          "zh-CN": "12/24 自驾到 LNS 停车；1/4 返回后取车回家。",
-          "zh-TW": "12/24 自駕到 LNS 停車；1/4 返回後取車回家。",
-          "en": "Park at LNS on Dec 24; pick up the family car after returning Jan 4."
-        }
-      }
     }
   ],
   "reservations": [],
@@ -376,8 +349,7 @@
     "airfareCurrency": "USD",
     "airfareStatus": "PAID",
     "rentalCar": "STILL NEEDED",
-    "hotels": "STILL NEEDED",
-    "parking": "STILL NEEDED"
+    "hotels": "STILL NEEDED"
   },
   "itinerary": [
     {
@@ -749,21 +721,6 @@
         "zh-CN": "12/24–1/4 · LAX 往返 · FSD (Supervised) · 确认里程与 Supercharging",
         "zh-TW": "12/24–1/4 · LAX 往返 · FSD (Supervised) · 確認里程與 Supercharging",
         "en": "Dec 24–Jan 4 · LAX round trip · FSD (Supervised) · confirm mileage and Supercharging"
-      }
-    },
-    {
-      "id": "parking-lns",
-      "icon": "🅿️",
-      "status": "STILL NEEDED",
-      "title": {
-        "zh-CN": "确认 LNS 停车",
-        "zh-TW": "確認 LNS 停車",
-        "en": "Confirm LNS parking"
-      },
-      "detail": {
-        "zh-CN": "12/24–1/4；纳入 true trip cost",
-        "zh-TW": "12/24–1/4；納入 true trip cost",
-        "en": "Dec 24–Jan 4; include in true trip cost"
       }
     },
     {
