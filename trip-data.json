@@ -12,13 +12,13 @@
   },
   "sync": {
     "source": "Gmail → Google Apps Script → GitHub",
-    "lastChecked": "2026-09-17 18:55 EDT",
+    "lastChecked": "2026-09-17 20:24 EDT",
     "mode": "auto",
     "privacy": "public-safe-fields-only",
     "lastResult": "0 changes · 0 review",
     "engine": "gmail-sync/1.2.0",
     "pollIntervalMinutes": 15,
-    "lastWriteAt": "2026-09-17 18:55 EDT"
+    "lastWriteAt": "2026-09-17 20:24 EDT"
   },
   "bookings": [
     {"id":"flight-outbound","type":"flight","label":"Outbound flight","status":"STILL NEEDED","from":"PHL","to":"SFO","date":"2026-12-24","depart":"待确认","arrive":"待确认","flightNumber":"待确认","nonstop":true,"detail":"12/24 从家开车到 PHL；优先 PHL → SFO nonstop，避免过早起飞。"},
