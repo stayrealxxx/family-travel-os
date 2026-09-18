@@ -752,51 +752,6 @@
       }
     },
     {
-      "id": "hotel-thousand-oaks",
-      "icon": "🏨",
-      "status": "STILL NEEDED",
-      "title": {
-        "zh-CN": "预订 Thousand Oaks 酒店",
-        "zh-TW": "預訂 Thousand Oaks 飯店",
-        "en": "Book Thousand Oaks hotel"
-      },
-      "detail": {
-        "zh-CN": "计划 12/24–12/29 · 5 晚",
-        "zh-TW": "計劃 12/24–12/29 · 5 晚",
-        "en": "Planned Dec 24–29 · 5 nights"
-      }
-    },
-    {
-      "id": "hotel-san-jose",
-      "icon": "🏨",
-      "status": "STILL NEEDED",
-      "title": {
-        "zh-CN": "预订 San Jose 酒店",
-        "zh-TW": "預訂 San Jose 飯店",
-        "en": "Book San Jose hotel"
-      },
-      "detail": {
-        "zh-CN": "计划 12/29–1/3 · 5 晚",
-        "zh-TW": "計劃 12/29–1/3 · 5 晚",
-        "en": "Planned Dec 29–Jan 3 · 5 nights"
-      }
-    },
-    {
-      "id": "hotel-lax-airport",
-      "icon": "🏨",
-      "status": "STILL NEEDED",
-      "title": {
-        "zh-CN": "预订 LAX 机场酒店",
-        "zh-TW": "預訂 LAX 機場飯店",
-        "en": "Book LAX airport hotel"
-      },
-      "detail": {
-        "zh-CN": "计划 1/3–1/4 · 1 晚",
-        "zh-TW": "計劃 1/3–1/4 · 1 晚",
-        "en": "Planned Jan 3–4 · 1 night"
-      }
-    },
-    {
       "id": "parking-lns",
       "icon": "🅿️",
       "status": "STILL NEEDED",
@@ -809,6 +764,51 @@
         "zh-CN": "12/24–1/4；纳入 true trip cost",
         "zh-TW": "12/24–1/4；納入 true trip cost",
         "en": "Dec 24–Jan 4; include in true trip cost"
+      }
+    },
+    {
+      "id": "hotel-thousand-oaks-1",
+      "icon": "🏨",
+      "status": "STILL NEEDED",
+      "title": {
+        "zh-CN": "预订朋友家附近酒店 · 第一段",
+        "zh-TW": "預訂朋友家附近飯店 · 第一段",
+        "en": "Book hotel near friends · Part 1"
+      },
+      "detail": {
+        "zh-CN": "12/24–12/29 · 5 晚",
+        "zh-TW": "12/24–12/29 · 5 晚",
+        "en": "Dec 24–29 · 5 nights"
+      }
+    },
+    {
+      "id": "hotel-san-jose",
+      "icon": "🏨",
+      "status": "STILL NEEDED",
+      "title": {
+        "zh-CN": "预订 San Jose 酒店",
+        "zh-TW": "預訂 San Jose 飯店",
+        "en": "Book San Jose hotel"
+      },
+      "detail": {
+        "zh-CN": "12/29–12/31 · 2 晚 · 12/30 一个完整日",
+        "zh-TW": "12/29–12/31 · 2 晚 · 12/30 一個完整日",
+        "en": "Dec 29–31 · 2 nights · one full day on Dec 30"
+      }
+    },
+    {
+      "id": "hotel-thousand-oaks-2",
+      "icon": "🏨",
+      "status": "STILL NEEDED",
+      "title": {
+        "zh-CN": "预订朋友家附近酒店 · 第二段",
+        "zh-TW": "預訂朋友家附近飯店 · 第二段",
+        "en": "Book hotel near friends · Part 2"
+      },
+      "detail": {
+        "zh-CN": "12/31–1/4 · 4 晚；优先回到同一家酒店",
+        "zh-TW": "12/31–1/4 · 4 晚；優先回到同一家飯店",
+        "en": "Dec 31–Jan 4 · 4 nights; prefer the same hotel"
       }
     }
   ],
