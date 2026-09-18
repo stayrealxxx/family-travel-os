@@ -86,33 +86,61 @@
   },
   "bookings": [
     {
-      "id": "flight-outbound",
+      "id": "flight-outbound-1",
       "type": "flight",
-      "label": "Outbound flight",
+      "label": "Outbound segment 1",
       "status": "PAID",
       "from": "LNS",
-      "to": "LAX",
+      "to": "ORD",
       "date": "2026-12-24",
       "depart": "09:47",
-      "arrive": "15:27",
-      "flightNumber": "UA6055 / UA1363",
-      "nonstop": false,
-      "connection": "ORD",
-      "stops": 1,
-      "detail": "United Economy · LNS 09:47 → ORD 11:10 · 1h45 connection · ORD 12:55 → LAX 15:27. Round-trip airfare paid: $1,762.65.",
-      "source": {
-        "provider": "United Airlines"
-      },
+      "arrive": "11:10",
+      "flightNumber": "UA6055",
+      "nonstop": true,
+      "duration": "2h 23m",
+      "aircraft": "Bombardier CRJ200",
+      "operator": "SkyWest DBA United Express",
+      "connectionAfter": "1h 45m at ORD",
+      "detail": "United Economy (L) · Meals are not offered on this flight.",
       "display": {
         "label": {
-          "zh-CN": "去程航班",
-          "zh-TW": "去程航班",
-          "en": "Outbound flight"
+          "zh-CN": "去程第 1 段",
+          "zh-TW": "去程第 1 段",
+          "en": "Outbound segment 1"
         },
         "detail": {
-          "zh-CN": "United Economy · LNS 09:47 → ORD 11:10 · 转机 1小时45分 · ORD 12:55 → LAX 15:27。",
-          "zh-TW": "United Economy · LNS 09:47 → ORD 11:10 · 轉機 1小時45分 · ORD 12:55 → LAX 15:27。",
-          "en": "United Economy · LNS 9:47 AM → ORD 11:10 AM · 1h45 connection · ORD 12:55 PM → LAX 3:27 PM."
+          "zh-CN": "United Economy (L) · 本段不提供餐食。",
+          "zh-TW": "United Economy (L) · 本段不提供餐食。",
+          "en": "United Economy (L) · Meals are not offered on this flight."
+        }
+      }
+    },
+    {
+      "id": "flight-outbound-2",
+      "type": "flight",
+      "label": "Outbound segment 2",
+      "status": "PAID",
+      "from": "ORD",
+      "to": "LAX",
+      "date": "2026-12-24",
+      "depart": "12:55",
+      "arrive": "15:27",
+      "flightNumber": "UA1363",
+      "nonstop": true,
+      "duration": "4h 32m",
+      "aircraft": "Boeing 777-200",
+      "operator": "United Airlines",
+      "detail": "United Economy (L) · Meals available for purchase.",
+      "display": {
+        "label": {
+          "zh-CN": "去程第 2 段",
+          "zh-TW": "去程第 2 段",
+          "en": "Outbound segment 2"
+        },
+        "detail": {
+          "zh-CN": "United Economy (L) · 餐食可购买。",
+          "zh-TW": "United Economy (L) · 餐食可購買。",
+          "en": "United Economy (L) · Meals available for purchase."
         }
       }
     },
@@ -233,33 +261,61 @@
       }
     },
     {
-      "id": "flight-return",
+      "id": "flight-return-1",
       "type": "flight",
-      "label": "Return flight",
+      "label": "Return segment 1",
       "status": "PAID",
       "from": "LAX",
-      "to": "LNS",
+      "to": "ORD",
       "date": "2027-01-04",
       "depart": "08:15",
-      "arrive": "19:56",
-      "flightNumber": "UA1946 / UA6060",
-      "nonstop": false,
-      "connection": "ORD",
-      "stops": 1,
-      "detail": "United Economy · LAX 08:15 → ORD 14:39 · 2h11 connection · ORD 16:50 → LNS 19:56. Same paid round-trip ticket.",
-      "source": {
-        "provider": "United Airlines"
-      },
+      "arrive": "14:39",
+      "flightNumber": "UA1946",
+      "nonstop": true,
+      "duration": "4h 24m",
+      "aircraft": "Airbus A321",
+      "operator": "United Airlines",
+      "connectionAfter": "2h 11m at ORD",
+      "detail": "United Economy (T) · Meals available for purchase.",
       "display": {
         "label": {
-          "zh-CN": "返程航班",
-          "zh-TW": "返程航班",
-          "en": "Return flight"
+          "zh-CN": "返程第 1 段",
+          "zh-TW": "返程第 1 段",
+          "en": "Return segment 1"
         },
         "detail": {
-          "zh-CN": "United Economy · LAX 08:15 → ORD 14:39 · 转机 2小时11分 · ORD 16:50 → LNS 19:56。",
-          "zh-TW": "United Economy · LAX 08:15 → ORD 14:39 · 轉機 2小時11分 · ORD 16:50 → LNS 19:56。",
-          "en": "United Economy · LAX 8:15 AM → ORD 2:39 PM · 2h11 connection · ORD 4:50 PM → LNS 7:56 PM."
+          "zh-CN": "United Economy (T) · 餐食可购买。",
+          "zh-TW": "United Economy (T) · 餐食可購買。",
+          "en": "United Economy (T) · Meals available for purchase."
+        }
+      }
+    },
+    {
+      "id": "flight-return-2",
+      "type": "flight",
+      "label": "Return segment 2",
+      "status": "PAID",
+      "from": "ORD",
+      "to": "LNS",
+      "date": "2027-01-04",
+      "depart": "16:50",
+      "arrive": "19:56",
+      "flightNumber": "UA6060",
+      "nonstop": true,
+      "duration": "2h 06m",
+      "aircraft": "Bombardier CRJ200",
+      "operator": "SkyWest DBA United Express",
+      "detail": "United Economy (T) · Meals are not offered on this flight.",
+      "display": {
+        "label": {
+          "zh-CN": "返程第 2 段",
+          "zh-TW": "返程第 2 段",
+          "en": "Return segment 2"
+        },
+        "detail": {
+          "zh-CN": "United Economy (T) · 本段不提供餐食。",
+          "zh-TW": "United Economy (T) · 本段不提供餐食。",
+          "en": "United Economy (T) · Meals are not offered on this flight."
         }
       }
     },
@@ -618,7 +674,7 @@
   ],
   "checklist": [
     {
-      "id": "flight-outbound",
+      "id": "flight-outbound-1",
       "icon": "✈️",
       "status": "PAID",
       "title": {
@@ -633,7 +689,7 @@
       }
     },
     {
-      "id": "flight-return",
+      "id": "flight-return-1",
       "icon": "✈️",
       "status": "PAID",
       "title": {
