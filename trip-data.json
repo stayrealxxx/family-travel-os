@@ -1,14 +1,14 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "trip": {
     "id": "west-coast-christmas-2026",
     "title": "West Coast Christmas 2026",
-    "start": "2026-12-24T08:00:00-05:00",
-    "end": "2027-01-02T21:30:00-05:00",
+    "start": "2026-12-24T09:47:00-05:00",
+    "end": "2027-01-04T19:56:00-05:00",
     "travelers": 4,
-    "buffer": "2027-01-03",
+    "buffer": null,
     "planStatus": "PRIMARY_PLAN",
-    "primaryRoute": "Home → PHL → SFO → San Jose → SFO/SJC → LAX/BUR → Thousand Oaks → LAX → PHL → Home"
+    "primaryRoute": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → LAX → ORD → LNS → Home"
   },
   "sync": {
     "source": "Gmail → Google Apps Script → GitHub",
@@ -25,70 +25,32 @@
       "id": "flight-outbound",
       "type": "flight",
       "label": "Outbound flight",
-      "status": "BOOKED",
+      "status": "PAID",
       "from": "LNS",
-      "to": "ORD",
+      "to": "LAX",
       "date": "2026-12-24",
-      "depart": "待确认",
-      "arrive": "待确认",
-      "flightNumber": "UA6055",
-      "nonstop": true,
-      "detail": "United Airlines · Gmail auto-sync",
+      "depart": "09:47",
+      "arrive": "15:27",
+      "flightNumber": "UA6055 / UA1363",
+      "nonstop": false,
+      "connection": "ORD",
+      "stops": 1,
+      "detail": "United Economy · LNS 09:47 → ORD 11:10 · 1h45 connection · ORD 12:55 → LAX 15:27. Round-trip airfare paid: $1,762.65.",
       "source": {
-        "provider": "United Airlines",
-        "key": "91786fcc537b453af75de593e71bb9b092d8dbf33592429b0d3d89198208af57",
-        "syncedAt": "2026-09-18T00:50:48.617Z"
+        "provider": "United Airlines"
       }
     },
     {
-      "id": "car-bay-area",
+      "id": "car-california",
       "type": "car",
-      "label": "Bay Area rental car",
+      "label": "California road-trip rental",
       "status": "STILL NEEDED",
-      "name": "Family-size vehicle",
-      "pickup": "SFO",
-      "dropoff": "SFO / SJC",
-      "pickupDate": "2026-12-24",
-      "dropoffDate": "2026-12-28",
-      "detail": "SFO 落地后取车开往 San Jose；12/28 根据加州段航班从 SFO 或 SJC 还车。"
-    },
-    {
-      "id": "hotel-san-jose",
-      "type": "hotel",
-      "label": "San Jose stay",
-      "status": "STILL NEEDED",
-      "name": "San Jose hotel",
-      "checkIn": "2026-12-24",
-      "checkOut": "2026-12-28",
-      "nights": 4,
-      "address": "待确认",
-      "detail": "连续住 4 晚；优先家庭便利、停车方便并减少换酒店。"
-    },
-    {
-      "id": "flight-california",
-      "type": "flight",
-      "label": "California flight",
-      "status": "STILL NEEDED",
-      "from": "SFO/SJC",
-      "to": "LAX/BUR",
-      "date": "2026-12-28",
-      "depart": "待确认",
-      "arrive": "待确认",
-      "flightNumber": "待确认",
-      "nonstop": true,
-      "detail": "比较 SFO vs SJC 出发、LAX vs BUR 抵达；按总成本和到 Thousand Oaks 的实际时间决定。"
-    },
-    {
-      "id": "car-southern-california",
-      "type": "car",
-      "label": "Southern California rental car",
-      "status": "STILL NEEDED",
-      "name": "Family-size vehicle",
-      "pickup": "LAX / BUR",
+      "name": "Tesla Model X with FSD (Supervised)",
+      "pickup": "LAX",
       "dropoff": "LAX",
-      "pickupDate": "2026-12-28",
-      "dropoffDate": "2027-01-02",
-      "detail": "抵达南加州后取车；1/2 在 LAX 还车后搭乘返程航班。"
+      "pickupDate": "2026-12-24",
+      "dropoffDate": "2027-01-04",
+      "detail": "One-car California road trip. Prioritize Model X, FSD (Supervised), sufficient/unlimited mileage, clear Supercharging billing, and family luggage space."
     },
     {
       "id": "hotel-thousand-oaks",
@@ -96,51 +58,93 @@
       "label": "Thousand Oaks stay",
       "status": "STILL NEEDED",
       "name": "Thousand Oaks / Westlake Village",
-      "checkIn": "2026-12-28",
-      "checkOut": "2027-01-02",
+      "checkIn": "2026-12-24",
+      "checkOut": "2026-12-29",
       "nights": 5,
       "address": "待确认",
-      "detail": "住在朋友家附近连续 5 晚；优先房间空间、早餐、停车和家庭便利。"
+      "detail": "PLANNED: 5 nights near friends. Prioritize room space, breakfast, parking, and family convenience."
+    },
+    {
+      "id": "hotel-san-jose",
+      "type": "hotel",
+      "label": "San Jose stay",
+      "status": "STILL NEEDED",
+      "name": "San Jose hotel",
+      "checkIn": "2026-12-29",
+      "checkOut": "2027-01-03",
+      "nights": 5,
+      "address": "待确认",
+      "detail": "PLANNED: 5 nights in the Bay Area after the northbound road-trip day. Avoid unnecessary hotel changes."
+    },
+    {
+      "id": "hotel-lax-airport",
+      "type": "hotel",
+      "label": "LAX airport night",
+      "status": "STILL NEEDED",
+      "name": "LAX airport hotel",
+      "checkIn": "2027-01-03",
+      "checkOut": "2027-01-04",
+      "nights": 1,
+      "address": "待确认",
+      "detail": "PLANNED: stay near LAX before the 08:15 flight. Prefer hotel shuttle and easy rental-car return logistics."
     },
     {
       "id": "flight-return",
       "type": "flight",
       "label": "Return flight",
-      "status": "STILL NEEDED",
+      "status": "PAID",
       "from": "LAX",
-      "to": "PHL",
-      "date": "2027-01-02",
-      "depart": "待确认",
-      "arrive": "待确认",
-      "flightNumber": "待确认",
-      "nonstop": true,
-      "detail": "1/2 LAX 还车后飞回 PHL；取自家车开回家，1/3 保留 buffer。"
+      "to": "LNS",
+      "date": "2027-01-04",
+      "depart": "08:15",
+      "arrive": "19:56",
+      "flightNumber": "UA1946 / UA6060",
+      "nonstop": false,
+      "connection": "ORD",
+      "stops": 1,
+      "detail": "United Economy · LAX 08:15 → ORD 14:39 · 2h11 connection · ORD 16:50 → LNS 19:56. Same paid round-trip ticket.",
+      "source": {
+        "provider": "United Airlines"
+      }
     },
     {
-      "id": "parking-phl",
+      "id": "parking-lns",
       "type": "parking",
-      "label": "PHL parking",
+      "label": "LNS parking",
       "status": "STILL NEEDED",
-      "name": "PHL airport parking",
+      "name": "Lancaster Airport parking",
       "startDate": "2026-12-24",
-      "endDate": "2027-01-02",
-      "detail": "12/24 自驾到 PHL 后停车；1/2 返回 PHL 后取车直接回家。"
+      "endDate": "2027-01-04",
+      "detail": "Drive to LNS on Dec 24, leave the family car, then pick it up after returning Jan 4."
     }
   ],
   "reservations": [],
   "planning": {
-    "locked": [
-      "12/24 从 PHL 飞往 SFO",
-      "SFO 落地后租车前往 San Jose",
-      "San Jose 酒店作为第一段住宿基地",
-      "12/28 左右搭乘 Bay Area → Southern California 短途航班",
-      "Thousand Oaks 附近酒店连续住 5 晚",
-      "南加州使用第二段租车并在 LAX 还车",
-      "1/2 从 LAX 飞回 PHL，再自驾回家"
+    "booked": [
+      "12/24 United LNS → ORD → LAX, 09:47–15:27",
+      "1/4 United LAX → ORD → LNS, 08:15–19:56",
+      "United Economy round-trip airfare paid: $1,762.65"
+    ],
+    "planned": [
+      "Pick up one rental car at LAX and keep it for the California road trip",
+      "Tesla Model X with FSD (Supervised) preferred",
+      "Thousand Oaks / Westlake Village as the first lodging base",
+      "Drive Thousand Oaks → San Jose around 12/29",
+      "San Jose as the second lodging base",
+      "Drive San Jose → LAX area on 1/3",
+      "LAX airport hotel on 1/3 before the 8:15 AM return flight"
     ],
     "flex": [
-      "Bay Area 出发机场：SFO 或 SJC",
-      "Southern California 抵达机场：LAX 或 BUR"
+      "Exact northbound road-trip departure time can move based on visits and hotel pricing",
+      "Exact rental-car pickup/return timing remains flexible"
     ]
+  },
+  "costs": {
+    "airfarePaid": 1762.65,
+    "airfareCurrency": "USD",
+    "airfareStatus": "PAID",
+    "rentalCar": "STILL NEEDED",
+    "hotels": "STILL NEEDED",
+    "parking": "STILL NEEDED"
   }
 }
