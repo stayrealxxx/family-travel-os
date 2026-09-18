@@ -1,4 +1,4 @@
-const CACHE='family-travel-os-v34';
+const CACHE='family-travel-os-v35';
 const CORE=['./','./index.html','./styles-v1.css','./palette-v1.css','./manifest.webmanifest','./christmas-icon.svg','./plan-data-v1.js','./app-core-v3.js','./weather-v4.js','./trip-data.json'];
 
 self.addEventListener('install',event=>{
