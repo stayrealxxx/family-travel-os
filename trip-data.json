@@ -8,7 +8,71 @@
     "travelers": 4,
     "buffer": null,
     "planStatus": "PRIMARY_PLAN",
-    "primaryRoute": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → LAX → ORD → LNS → Home"
+    "primaryRoute": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → LAX → ORD → LNS → Home",
+    "display": {
+      "title": {
+        "zh-CN": "西海岸圣诞公路之旅",
+        "zh-TW": "西海岸聖誕公路之旅",
+        "en": "West Coast Christmas Road Trip"
+      },
+      "subtitle": {
+        "zh-CN": "2026年12月24日 → 2027年1月4日 · 一家四口",
+        "zh-TW": "2026年12月24日 → 2027年1月4日 · 一家四口",
+        "en": "Dec 24, 2026 → Jan 4, 2027 · Family of 4"
+      },
+      "heroTitle": {
+        "zh-CN": "西海岸圣诞公路之旅 ✨",
+        "zh-TW": "西海岸聖誕公路之旅 ✨",
+        "en": "West Coast Christmas Road Trip ✨"
+      },
+      "heroSubtitle": {
+        "zh-CN": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → LAX → ORD → LNS → Home",
+        "zh-TW": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → LAX → ORD → LNS → Home",
+        "en": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → LAX → ORD → LNS → Home"
+      }
+    },
+    "routeNodes": [
+      {
+        "code": "HOME",
+        "label": "Home"
+      },
+      {
+        "code": "LNS",
+        "label": "Lancaster"
+      },
+      {
+        "code": "ORD",
+        "label": "Chicago"
+      },
+      {
+        "code": "LAX",
+        "label": "Los Angeles"
+      },
+      {
+        "code": "TO",
+        "label": "Thousand Oaks"
+      },
+      {
+        "code": "SJC",
+        "label": "San Jose"
+      },
+      {
+        "code": "LAX",
+        "label": "Los Angeles"
+      },
+      {
+        "code": "ORD",
+        "label": "Chicago"
+      },
+      {
+        "code": "LNS",
+        "label": "Lancaster"
+      },
+      {
+        "code": "HOME",
+        "label": "Home"
+      }
+    ]
   },
   "sync": {
     "source": "Gmail → Google Apps Script → GitHub",
@@ -146,5 +210,409 @@
     "rentalCar": "STILL NEEDED",
     "hotels": "STILL NEEDED",
     "parking": "STILL NEEDED"
-  }
+  },
+  "itinerary": [
+    {
+      "date": "12/24",
+      "title": {
+        "zh-CN": "Home → LNS → ORD → LAX → Thousand Oaks",
+        "zh-TW": "Home → LNS → ORD → LAX → Thousand Oaks",
+        "en": "Home → LNS → ORD → LAX → Thousand Oaks"
+      },
+      "sub": {
+        "zh-CN": "United 已出票；LAX 落地后取车，开始加州公路行程。",
+        "zh-TW": "United 已出票；LAX 落地後取車，開始加州公路行程。",
+        "en": "United ticketed; pick up the rental at LAX and begin the California road trip."
+      },
+      "events": [
+        {
+          "time": {
+            "zh-CN": "待定",
+            "zh-TW": "待定",
+            "en": "TBD"
+          },
+          "title": {
+            "zh-CN": "开车前往 LNS",
+            "zh-TW": "開車前往 LNS",
+            "en": "Drive to LNS"
+          },
+          "detail": {
+            "zh-CN": "自家车停在 LNS；停车仍需安排。",
+            "zh-TW": "自家車停在 LNS；停車仍需安排。",
+            "en": "Leave the family car at LNS; parking still needs to be arranged."
+          },
+          "iso": "2026-12-24T08:00:00-05:00",
+          "place": "Lancaster Airport, PA"
+        },
+        {
+          "time": "09:47",
+          "title": {
+            "zh-CN": "UA6055 · LNS → ORD",
+            "zh-TW": "UA6055 · LNS → ORD",
+            "en": "UA6055 · LNS → ORD"
+          },
+          "detail": {
+            "zh-CN": "United Express · 11:10 抵达 ORD。",
+            "zh-TW": "United Express · 11:10 抵達 ORD。",
+            "en": "United Express · arrives ORD at 11:10 AM."
+          },
+          "iso": "2026-12-24T09:47:00-05:00",
+          "place": "Lancaster Airport, PA"
+        },
+        {
+          "time": "12:55",
+          "title": {
+            "zh-CN": "UA1363 · ORD → LAX",
+            "zh-TW": "UA1363 · ORD → LAX",
+            "en": "UA1363 · ORD → LAX"
+          },
+          "detail": {
+            "zh-CN": "ORD 转机 1小时45分；15:27 抵达 LAX。",
+            "zh-TW": "ORD 轉機 1小時45分；15:27 抵達 LAX。",
+            "en": "1h45 connection at ORD; arrives LAX at 3:27 PM."
+          },
+          "iso": "2026-12-24T12:55:00-06:00",
+          "place": "Chicago O'Hare International Airport"
+        },
+        {
+          "time": {
+            "zh-CN": "约 16:30",
+            "zh-TW": "約 16:30",
+            "en": "~4:30 PM"
+          },
+          "title": {
+            "zh-CN": "LAX 取 Tesla Model X",
+            "zh-TW": "LAX 取 Tesla Model X",
+            "en": "Pick up Tesla Model X at LAX"
+          },
+          "detail": {
+            "zh-CN": "目标 FSD (Supervised)；确认里程、Supercharging 和还车规则。",
+            "zh-TW": "目標 FSD (Supervised)；確認里程、Supercharging 和還車規則。",
+            "en": "Target FSD (Supervised); confirm mileage, Supercharging billing, and return rules."
+          },
+          "iso": "2026-12-24T16:30:00-08:00",
+          "place": "Los Angeles International Airport"
+        }
+      ]
+    },
+    {
+      "date": "12/25–12/28",
+      "title": {
+        "zh-CN": "Thousand Oaks / LA",
+        "zh-TW": "Thousand Oaks / LA",
+        "en": "Thousand Oaks / LA"
+      },
+      "sub": {
+        "zh-CN": "朋友探访为主；保持同一家酒店和同一辆车。",
+        "zh-TW": "朋友探訪為主；保持同一家飯店和同一輛車。",
+        "en": "Focus on visiting friends; keep the same hotel and rental car."
+      },
+      "events": [
+        {
+          "time": "10:00",
+          "title": {
+            "zh-CN": "Thousand Oaks / LA 行程",
+            "zh-TW": "Thousand Oaks / LA 行程",
+            "en": "Thousand Oaks / LA plans"
+          },
+          "detail": {
+            "zh-CN": "尽量轻松安排，为长途自驾留体力。",
+            "zh-TW": "盡量輕鬆安排，為長途自駕留體力。",
+            "en": "Keep the schedule relaxed and save energy for the road-trip day."
+          },
+          "iso": "2026-12-25T10:00:00-08:00",
+          "place": "Thousand Oaks, CA"
+        }
+      ]
+    },
+    {
+      "date": "12/29",
+      "title": {
+        "zh-CN": "Thousand Oaks → San Jose 公路日",
+        "zh-TW": "Thousand Oaks → San Jose 公路日",
+        "en": "Thousand Oaks → San Jose road-trip day"
+      },
+      "sub": {
+        "zh-CN": "Model X 长途自驾北上；中途结合 Supercharger 和家庭休息。",
+        "zh-TW": "Model X 長途自駕北上；中途結合 Supercharger 和家庭休息。",
+        "en": "Drive north in the Model X, combining Supercharger stops with family breaks."
+      },
+      "events": [
+        {
+          "time": {
+            "zh-CN": "上午",
+            "zh-TW": "上午",
+            "en": "Morning"
+          },
+          "title": {
+            "zh-CN": "Thousand Oaks 退房出发",
+            "zh-TW": "Thousand Oaks 退房出發",
+            "en": "Check out and depart Thousand Oaks"
+          },
+          "detail": {
+            "zh-CN": "把这一天作为完整 road-trip day；具体出发时间可调整。",
+            "zh-TW": "把這一天作為完整 road-trip day；具體出發時間可調整。",
+            "en": "Treat this as a full road-trip day; exact departure time remains flexible."
+          },
+          "iso": "2026-12-29T09:00:00-08:00",
+          "place": "Thousand Oaks, CA"
+        },
+        {
+          "time": {
+            "zh-CN": "傍晚",
+            "zh-TW": "傍晚",
+            "en": "Evening"
+          },
+          "title": {
+            "zh-CN": "抵达 San Jose 并入住",
+            "zh-TW": "抵達 San Jose 並入住",
+            "en": "Arrive in San Jose and check in"
+          },
+          "detail": {
+            "zh-CN": "第二段住宿基地，计划连续住 5 晚。",
+            "zh-TW": "第二段住宿基地，計劃連續住 5 晚。",
+            "en": "Second lodging base; planned for 5 consecutive nights."
+          },
+          "iso": "2026-12-29T17:00:00-08:00",
+          "place": "San Jose, CA"
+        }
+      ]
+    },
+    {
+      "date": "12/30–01/02",
+      "title": {
+        "zh-CN": "San Jose / Bay Area",
+        "zh-TW": "San Jose / Bay Area",
+        "en": "San Jose / Bay Area"
+      },
+      "sub": {
+        "zh-CN": "朋友探访和轻松活动；不增加酒店切换。",
+        "zh-TW": "朋友探訪和輕鬆活動；不增加飯店切換。",
+        "en": "Friends and relaxed activities; avoid additional hotel changes."
+      },
+      "events": [
+        {
+          "time": "10:00",
+          "title": {
+            "zh-CN": "Bay Area 行程",
+            "zh-TW": "Bay Area 行程",
+            "en": "Bay Area plans"
+          },
+          "detail": {
+            "zh-CN": "以同一家 San Jose 酒店为基地。",
+            "zh-TW": "以同一家 San Jose 飯店為基地。",
+            "en": "Use the same San Jose hotel as the base."
+          },
+          "iso": "2026-12-30T10:00:00-08:00",
+          "place": "San Jose, CA"
+        }
+      ]
+    },
+    {
+      "date": "01/03",
+      "title": {
+        "zh-CN": "San Jose → LAX",
+        "zh-TW": "San Jose → LAX",
+        "en": "San Jose → LAX"
+      },
+      "sub": {
+        "zh-CN": "南下回到 LAX 区域；计划住机场酒店。",
+        "zh-TW": "南下回到 LAX 區域；計劃住機場飯店。",
+        "en": "Drive back to the LAX area; plan an airport-hotel night."
+      },
+      "events": [
+        {
+          "time": {
+            "zh-CN": "上午",
+            "zh-TW": "上午",
+            "en": "Morning"
+          },
+          "title": {
+            "zh-CN": "San Jose 退房并南下",
+            "zh-TW": "San Jose 退房並南下",
+            "en": "Check out in San Jose and drive south"
+          },
+          "detail": {
+            "zh-CN": "结合 Supercharger、午餐和儿童休息。",
+            "zh-TW": "結合 Supercharger、午餐和兒童休息。",
+            "en": "Combine Supercharger stops with lunch and child breaks."
+          },
+          "iso": "2027-01-03T09:00:00-08:00",
+          "place": "San Jose, CA"
+        },
+        {
+          "time": {
+            "zh-CN": "晚间",
+            "zh-TW": "晚間",
+            "en": "Evening"
+          },
+          "title": {
+            "zh-CN": "LAX 机场酒店入住",
+            "zh-TW": "LAX 機場飯店入住",
+            "en": "Check in at LAX airport hotel"
+          },
+          "detail": {
+            "zh-CN": "按租车条款决定当晚还是次日清晨还车。",
+            "zh-TW": "按租車條款決定當晚還是次日清晨還車。",
+            "en": "Return the car that evening or early next morning depending on rental terms."
+          },
+          "iso": "2027-01-03T18:00:00-08:00",
+          "place": "Los Angeles International Airport"
+        }
+      ]
+    },
+    {
+      "date": "01/04",
+      "title": {
+        "zh-CN": "LAX → ORD → LNS → Home",
+        "zh-TW": "LAX → ORD → LNS → Home",
+        "en": "LAX → ORD → LNS → Home"
+      },
+      "sub": {
+        "zh-CN": "United 已出票；8:15 AM 起飞，7:56 PM 回到 LNS。",
+        "zh-TW": "United 已出票；8:15 AM 起飛，7:56 PM 回到 LNS。",
+        "en": "United ticketed; depart LAX at 8:15 AM and arrive LNS at 7:56 PM."
+      },
+      "events": [
+        {
+          "time": "08:15",
+          "title": {
+            "zh-CN": "UA1946 · LAX → ORD",
+            "zh-TW": "UA1946 · LAX → ORD",
+            "en": "UA1946 · LAX → ORD"
+          },
+          "detail": {
+            "zh-CN": "14:39 抵达 ORD。",
+            "zh-TW": "14:39 抵達 ORD。",
+            "en": "Arrives ORD at 2:39 PM."
+          },
+          "iso": "2027-01-04T08:15:00-08:00",
+          "place": "Los Angeles International Airport"
+        },
+        {
+          "time": "16:50",
+          "title": {
+            "zh-CN": "UA6060 · ORD → LNS",
+            "zh-TW": "UA6060 · ORD → LNS",
+            "en": "UA6060 · ORD → LNS"
+          },
+          "detail": {
+            "zh-CN": "ORD 转机 2小时11分；19:56 抵达 LNS。",
+            "zh-TW": "ORD 轉機 2小時11分；19:56 抵達 LNS。",
+            "en": "2h11 connection at ORD; arrives LNS at 7:56 PM."
+          },
+          "iso": "2027-01-04T16:50:00-06:00",
+          "place": "Chicago O'Hare International Airport"
+        }
+      ]
+    }
+  ],
+  "checklist": [
+    {
+      "id": "flight-outbound",
+      "icon": "✈️",
+      "status": "PAID",
+      "title": {
+        "zh-CN": "去程 United 已出票",
+        "zh-TW": "去程 United 已出票",
+        "en": "Outbound United ticketed"
+      },
+      "detail": {
+        "zh-CN": "12/24 · LNS → ORD → LAX · 09:47–15:27",
+        "zh-TW": "12/24 · LNS → ORD → LAX · 09:47–15:27",
+        "en": "Dec 24 · LNS → ORD → LAX · 9:47 AM–3:27 PM"
+      }
+    },
+    {
+      "id": "flight-return",
+      "icon": "✈️",
+      "status": "PAID",
+      "title": {
+        "zh-CN": "返程 United 已出票",
+        "zh-TW": "返程 United 已出票",
+        "en": "Return United ticketed"
+      },
+      "detail": {
+        "zh-CN": "1/4 · LAX → ORD → LNS · 08:15–19:56",
+        "zh-TW": "1/4 · LAX → ORD → LNS · 08:15–19:56",
+        "en": "Jan 4 · LAX → ORD → LNS · 8:15 AM–7:56 PM"
+      }
+    },
+    {
+      "id": "car-california",
+      "icon": "🚙",
+      "status": "STILL NEEDED",
+      "title": {
+        "zh-CN": "预订 Tesla Model X",
+        "zh-TW": "預訂 Tesla Model X",
+        "en": "Book Tesla Model X"
+      },
+      "detail": {
+        "zh-CN": "12/24–1/4 · LAX 往返 · FSD (Supervised) · 确认里程与 Supercharging",
+        "zh-TW": "12/24–1/4 · LAX 往返 · FSD (Supervised) · 確認里程與 Supercharging",
+        "en": "Dec 24–Jan 4 · LAX round trip · FSD (Supervised) · confirm mileage and Supercharging"
+      }
+    },
+    {
+      "id": "hotel-thousand-oaks",
+      "icon": "🏨",
+      "status": "STILL NEEDED",
+      "title": {
+        "zh-CN": "预订 Thousand Oaks 酒店",
+        "zh-TW": "預訂 Thousand Oaks 飯店",
+        "en": "Book Thousand Oaks hotel"
+      },
+      "detail": {
+        "zh-CN": "计划 12/24–12/29 · 5 晚",
+        "zh-TW": "計劃 12/24–12/29 · 5 晚",
+        "en": "Planned Dec 24–29 · 5 nights"
+      }
+    },
+    {
+      "id": "hotel-san-jose",
+      "icon": "🏨",
+      "status": "STILL NEEDED",
+      "title": {
+        "zh-CN": "预订 San Jose 酒店",
+        "zh-TW": "預訂 San Jose 飯店",
+        "en": "Book San Jose hotel"
+      },
+      "detail": {
+        "zh-CN": "计划 12/29–1/3 · 5 晚",
+        "zh-TW": "計劃 12/29–1/3 · 5 晚",
+        "en": "Planned Dec 29–Jan 3 · 5 nights"
+      }
+    },
+    {
+      "id": "hotel-lax-airport",
+      "icon": "🏨",
+      "status": "STILL NEEDED",
+      "title": {
+        "zh-CN": "预订 LAX 机场酒店",
+        "zh-TW": "預訂 LAX 機場飯店",
+        "en": "Book LAX airport hotel"
+      },
+      "detail": {
+        "zh-CN": "计划 1/3–1/4 · 1 晚",
+        "zh-TW": "計劃 1/3–1/4 · 1 晚",
+        "en": "Planned Jan 3–4 · 1 night"
+      }
+    },
+    {
+      "id": "parking-lns",
+      "icon": "🅿️",
+      "status": "STILL NEEDED",
+      "title": {
+        "zh-CN": "确认 LNS 停车",
+        "zh-TW": "確認 LNS 停車",
+        "en": "Confirm LNS parking"
+      },
+      "detail": {
+        "zh-CN": "12/24–1/4；纳入 true trip cost",
+        "zh-TW": "12/24–1/4；納入 true trip cost",
+        "en": "Dec 24–Jan 4; include in true trip cost"
+      }
+    }
+  ],
+  "airportOptions": []
 }
