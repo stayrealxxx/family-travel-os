@@ -167,25 +167,31 @@
           "id": "lax-to",
           "from": "lax",
           "to": "to",
-          "mode": "drive"
+          "mode": "drive",
+          "toBookingId": "hotel-thousand-oaks-1"
         },
         {
           "id": "to-sj",
           "from": "to",
           "to": "sj",
-          "mode": "drive"
+          "mode": "drive",
+          "fromBookingId": "hotel-thousand-oaks-1",
+          "toBookingId": "hotel-san-jose"
         },
         {
           "id": "sj-to",
           "from": "sj",
           "to": "to",
-          "mode": "drive"
+          "mode": "drive",
+          "fromBookingId": "hotel-san-jose",
+          "toBookingId": "hotel-thousand-oaks-2"
         },
         {
           "id": "to-lax",
           "from": "to",
           "to": "lax",
-          "mode": "drive"
+          "mode": "drive",
+          "fromBookingId": "hotel-thousand-oaks-2"
         },
         {
           "id": "lax-ord",
