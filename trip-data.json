@@ -76,7 +76,139 @@
         "code": "HOME",
         "label": "Home"
       }
-    ]
+    ],
+    "map": {
+      "privacyNote": "Home is represented by Downingtown city center, not a private street address.",
+      "points": [
+        {
+          "id": "home",
+          "name": "Downingtown",
+          "short": "HOME",
+          "lat": 40.0065,
+          "lng": -75.7033,
+          "query": "Downingtown, PA",
+          "kind": "home"
+        },
+        {
+          "id": "lns",
+          "name": "Lancaster Airport",
+          "short": "LNS",
+          "lat": 40.1217,
+          "lng": -76.2961,
+          "query": "Lancaster Airport, PA",
+          "kind": "airport"
+        },
+        {
+          "id": "ord",
+          "name": "Chicago O'Hare International Airport",
+          "short": "ORD",
+          "lat": 41.9742,
+          "lng": -87.9073,
+          "query": "Chicago O'Hare International Airport",
+          "kind": "airport"
+        },
+        {
+          "id": "lax",
+          "name": "Los Angeles International Airport",
+          "short": "LAX",
+          "lat": 33.9416,
+          "lng": -118.4085,
+          "query": "Los Angeles International Airport",
+          "kind": "airport"
+        },
+        {
+          "id": "to",
+          "name": "Thousand Oaks",
+          "short": "TO",
+          "lat": 34.1706,
+          "lng": -118.8376,
+          "query": "Thousand Oaks, CA",
+          "kind": "stay",
+          "bookingIds": [
+            "hotel-thousand-oaks-1",
+            "hotel-thousand-oaks-2"
+          ]
+        },
+        {
+          "id": "sj",
+          "name": "San Jose",
+          "short": "SJC",
+          "lat": 37.3382,
+          "lng": -121.8863,
+          "query": "San Jose, CA",
+          "kind": "stay",
+          "bookingIds": [
+            "hotel-san-jose"
+          ]
+        }
+      ],
+      "legs": [
+        {
+          "id": "home-lns",
+          "from": "home",
+          "to": "lns",
+          "mode": "drive"
+        },
+        {
+          "id": "lns-ord",
+          "from": "lns",
+          "to": "ord",
+          "mode": "flight",
+          "flightNumber": "UA6055"
+        },
+        {
+          "id": "ord-lax",
+          "from": "ord",
+          "to": "lax",
+          "mode": "flight",
+          "flightNumber": "UA1363"
+        },
+        {
+          "id": "lax-to",
+          "from": "lax",
+          "to": "to",
+          "mode": "drive"
+        },
+        {
+          "id": "to-sj",
+          "from": "to",
+          "to": "sj",
+          "mode": "drive"
+        },
+        {
+          "id": "sj-to",
+          "from": "sj",
+          "to": "to",
+          "mode": "drive"
+        },
+        {
+          "id": "to-lax",
+          "from": "to",
+          "to": "lax",
+          "mode": "drive"
+        },
+        {
+          "id": "lax-ord",
+          "from": "lax",
+          "to": "ord",
+          "mode": "flight",
+          "flightNumber": "UA1946"
+        },
+        {
+          "id": "ord-lns",
+          "from": "ord",
+          "to": "lns",
+          "mode": "flight",
+          "flightNumber": "UA6060"
+        },
+        {
+          "id": "lns-home",
+          "from": "lns",
+          "to": "home",
+          "mode": "drive"
+        }
+      ]
+    }
   },
   "sync": {
     "source": "Gmail → Google Apps Script → GitHub",
