@@ -9,25 +9,837 @@
     "buffer": null,
     "planStatus": "PRIMARY_PLAN",
     "primaryRoute": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → Thousand Oaks → LAX → ORD → LNS → Home",
-    "display": {"title":{"zh-CN":"西海岸圣诞公路之旅","zh-TW":"西海岸聖誕公路之旅","en":"West Coast Christmas Road Trip"},"subtitle":{"zh-CN":"2026年12月24日 → 2027年1月4日 · 一家四口","zh-TW":"2026年12月24日 → 2027年1月4日 · 一家四口","en":"Dec 24, 2026 → Jan 4, 2027 · Family of 4"},"heroTitle":{"zh-CN":"西海岸圣诞公路之旅 ✨","zh-TW":"西海岸聖誕公路之旅 ✨","en":"West Coast Christmas Road Trip ✨"},"heroSubtitle":{"zh-CN":"Home → LNS → ORD → LAX → Thousand Oaks → San Jose → Thousand Oaks → LAX → ORD → LNS → Home","zh-TW":"Home → LNS → ORD → LAX → Thousand Oaks → San Jose → Thousand Oaks → LAX → ORD → LNS → Home","en":"Home → LNS → ORD → LAX → Thousand Oaks → San Jose → Thousand Oaks → LAX → ORD → LNS → Home"}},
-    "routeNodes":[{"code":"HOME","label":"Home"},{"code":"LNS","label":"Lancaster"},{"code":"ORD","label":"Chicago"},{"code":"LAX","label":"Los Angeles"},{"code":"TO","label":"Thousand Oaks"},{"code":"SJC","label":"San Jose"},{"code":"TO","label":"Thousand Oaks"},{"code":"LAX","label":"Los Angeles"},{"code":"ORD","label":"Chicago"},{"code":"LNS","label":"Lancaster"},{"code":"HOME","label":"Home"}],
-    "map":{"privacyNote":"Home is represented by Downingtown city center, not a private street address.","points":[{"id":"home","name":"Downingtown","short":"HOME","lat":40.0065,"lng":-75.7033,"query":"Downingtown, PA","kind":"home"},{"id":"lns","name":"Lancaster Airport","short":"LNS","lat":40.1217,"lng":-76.2961,"query":"Lancaster Airport, PA","kind":"airport"},{"id":"ord","name":"Chicago O'Hare International Airport","short":"ORD","lat":41.9742,"lng":-87.9073,"query":"Chicago O'Hare International Airport","kind":"airport"},{"id":"lax","name":"Los Angeles International Airport","short":"LAX","lat":33.9416,"lng":-118.4085,"query":"Los Angeles International Airport","kind":"airport"},{"id":"to","name":"Thousand Oaks","short":"TO","lat":34.1706,"lng":-118.8376,"query":"Thousand Oaks, CA","kind":"stay","bookingIds":["hotel-thousand-oaks-1","hotel-thousand-oaks-2"]},{"id":"sj","name":"San Jose","short":"SJC","lat":37.3382,"lng":-121.8863,"query":"San Jose, CA","kind":"stay","bookingIds":["hotel-san-jose"]}],"legs":[{"id":"home-lns","from":"home","to":"lns","mode":"drive"},{"id":"lns-ord","from":"lns","to":"ord","mode":"flight","flightNumber":"UA6055"},{"id":"ord-lax","from":"ord","to":"lax","mode":"flight","flightNumber":"UA1363"},{"id":"lax-to","from":"lax","to":"to","mode":"drive","toBookingId":"hotel-thousand-oaks-1"},{"id":"to-sj","from":"to","to":"sj","mode":"drive","fromBookingId":"hotel-thousand-oaks-1","toBookingId":"hotel-san-jose"},{"id":"sj-to","from":"sj","to":"to","mode":"drive","fromBookingId":"hotel-san-jose","toBookingId":"hotel-thousand-oaks-2"},{"id":"to-lax","from":"to","to":"lax","mode":"drive","fromBookingId":"hotel-thousand-oaks-2"},{"id":"lax-ord","from":"lax","to":"ord","mode":"flight","flightNumber":"UA1946"},{"id":"ord-lns","from":"ord","to":"lns","mode":"flight","flightNumber":"UA6060"},{"id":"lns-home","from":"lns","to":"home","mode":"drive"}]}
+    "display": {
+      "title": {
+        "zh-CN": "西海岸圣诞公路之旅",
+        "zh-TW": "西海岸聖誕公路之旅",
+        "en": "West Coast Christmas Road Trip"
+      },
+      "subtitle": {
+        "zh-CN": "2026年12月24日 → 2027年1月4日 · 一家四口",
+        "zh-TW": "2026年12月24日 → 2027年1月4日 · 一家四口",
+        "en": "Dec 24, 2026 → Jan 4, 2027 · Family of 4"
+      },
+      "heroTitle": {
+        "zh-CN": "西海岸圣诞公路之旅 ✨",
+        "zh-TW": "西海岸聖誕公路之旅 ✨",
+        "en": "West Coast Christmas Road Trip ✨"
+      },
+      "heroSubtitle": {
+        "zh-CN": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → Thousand Oaks → LAX → ORD → LNS → Home",
+        "zh-TW": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → Thousand Oaks → LAX → ORD → LNS → Home",
+        "en": "Home → LNS → ORD → LAX → Thousand Oaks → San Jose → Thousand Oaks → LAX → ORD → LNS → Home"
+      }
+    },
+    "routeNodes": [
+      {
+        "code": "HOME",
+        "label": "Home"
+      },
+      {
+        "code": "LNS",
+        "label": "Lancaster"
+      },
+      {
+        "code": "ORD",
+        "label": "Chicago"
+      },
+      {
+        "code": "LAX",
+        "label": "Los Angeles"
+      },
+      {
+        "code": "TO",
+        "label": "Thousand Oaks"
+      },
+      {
+        "code": "SJC",
+        "label": "San Jose"
+      },
+      {
+        "code": "TO",
+        "label": "Thousand Oaks"
+      },
+      {
+        "code": "LAX",
+        "label": "Los Angeles"
+      },
+      {
+        "code": "ORD",
+        "label": "Chicago"
+      },
+      {
+        "code": "LNS",
+        "label": "Lancaster"
+      },
+      {
+        "code": "HOME",
+        "label": "Home"
+      }
+    ],
+    "map": {
+      "privacyNote": "Home is represented by Downingtown city center, not a private street address.",
+      "points": [
+        {
+          "id": "home",
+          "name": "Downingtown",
+          "short": "HOME",
+          "lat": 40.0065,
+          "lng": -75.7033,
+          "query": "Downingtown, PA",
+          "kind": "home"
+        },
+        {
+          "id": "lns",
+          "name": "Lancaster Airport",
+          "short": "LNS",
+          "lat": 40.1217,
+          "lng": -76.2961,
+          "query": "Lancaster Airport, PA",
+          "kind": "airport"
+        },
+        {
+          "id": "ord",
+          "name": "Chicago O'Hare International Airport",
+          "short": "ORD",
+          "lat": 41.9742,
+          "lng": -87.9073,
+          "query": "Chicago O'Hare International Airport",
+          "kind": "airport"
+        },
+        {
+          "id": "lax",
+          "name": "Los Angeles International Airport",
+          "short": "LAX",
+          "lat": 33.9416,
+          "lng": -118.4085,
+          "query": "Los Angeles International Airport",
+          "kind": "airport"
+        },
+        {
+          "id": "to",
+          "name": "Thousand Oaks",
+          "short": "TO",
+          "lat": 34.1706,
+          "lng": -118.8376,
+          "query": "Thousand Oaks, CA",
+          "kind": "stay",
+          "bookingIds": [
+            "hotel-thousand-oaks-1",
+            "hotel-thousand-oaks-2"
+          ]
+        },
+        {
+          "id": "sj",
+          "name": "San Jose",
+          "short": "SJC",
+          "lat": 37.3382,
+          "lng": -121.8863,
+          "query": "San Jose, CA",
+          "kind": "stay",
+          "bookingIds": [
+            "hotel-san-jose"
+          ]
+        }
+      ],
+      "legs": [
+        {
+          "id": "home-lns",
+          "from": "home",
+          "to": "lns",
+          "mode": "drive"
+        },
+        {
+          "id": "lns-ord",
+          "from": "lns",
+          "to": "ord",
+          "mode": "flight",
+          "flightNumber": "UA6055"
+        },
+        {
+          "id": "ord-lax",
+          "from": "ord",
+          "to": "lax",
+          "mode": "flight",
+          "flightNumber": "UA1363"
+        },
+        {
+          "id": "lax-to",
+          "from": "lax",
+          "to": "to",
+          "mode": "drive",
+          "toBookingId": "hotel-thousand-oaks-1"
+        },
+        {
+          "id": "to-sj",
+          "from": "to",
+          "to": "sj",
+          "mode": "drive",
+          "fromBookingId": "hotel-thousand-oaks-1",
+          "toBookingId": "hotel-san-jose"
+        },
+        {
+          "id": "sj-to",
+          "from": "sj",
+          "to": "to",
+          "mode": "drive",
+          "fromBookingId": "hotel-san-jose",
+          "toBookingId": "hotel-thousand-oaks-2"
+        },
+        {
+          "id": "to-lax",
+          "from": "to",
+          "to": "lax",
+          "mode": "drive",
+          "fromBookingId": "hotel-thousand-oaks-2"
+        },
+        {
+          "id": "lax-ord",
+          "from": "lax",
+          "to": "ord",
+          "mode": "flight",
+          "flightNumber": "UA1946"
+        },
+        {
+          "id": "ord-lns",
+          "from": "ord",
+          "to": "lns",
+          "mode": "flight",
+          "flightNumber": "UA6060"
+        },
+        {
+          "id": "lns-home",
+          "from": "lns",
+          "to": "home",
+          "mode": "drive"
+        }
+      ]
+    }
   },
-  "sync":{"source":"Gmail → Google Apps Script → GitHub","lastChecked":"2026-09-20 09:26 EDT","mode":"auto","privacy":"public-safe-fields-only","lastResult":"0 changes · 0 review","engine":"gmail-sync/1.2.0","pollIntervalMinutes":15,"lastWriteAt":"2026-09-17 20:50 EDT"},
-  "bookings":[
-    {"id":"flight-outbound-1","type":"flight","label":"Outbound segment 1","status":"PAID","from":"LNS","to":"ORD","date":"2026-12-24","depart":"09:47","arrive":"11:10","flightNumber":"UA6055","nonstop":true,"duration":"2h 23m","aircraft":"Bombardier CRJ200","operator":"SkyWest DBA United Express","connectionAfter":"1h 45m at ORD","detail":"United Economy (L) · Meals are not offered on this flight."},
-    {"id":"flight-outbound-2","type":"flight","label":"Outbound segment 2","status":"PAID","from":"ORD","to":"LAX","date":"2026-12-24","depart":"12:55","arrive":"15:27","flightNumber":"UA1363","nonstop":true,"duration":"4h 32m","aircraft":"Boeing 777-200","operator":"United Airlines","detail":"United Economy (L) · Meals available for purchase."},
-    {"id":"car-california","type":"car","label":"California road-trip rental","status":"STILL NEEDED","name":"Tesla Model X with FSD (Supervised)","pickup":"LAX","dropoff":"LAX","pickupDate":"2026-12-24","dropoffDate":"2027-01-04","detail":"One-car California road trip. Prioritize Model X, FSD (Supervised), sufficient/unlimited mileage, clear Supercharging billing, and family luggage space."},
-    {"id":"hotel-thousand-oaks-1","type":"hotel","label":"Thousand Oaks stay 1","status":"STILL NEEDED","name":"Thousand Oaks / Westlake Village","checkIn":"2026-12-24","checkOut":"2026-12-29","nights":5,"address":"待确认","detail":"PLANNED: Dec 24–29, 5 nights near friends."},
-    {"id":"hotel-san-jose","type":"hotel","label":"San Jose stay","status":"STILL NEEDED","name":"San Jose hotel","checkIn":"2026-12-29","checkOut":"2026-12-31","nights":2,"address":"待确认","detail":"PLANNED: Dec 29–31, 2 nights with one full San Jose day."},
-    {"id":"hotel-thousand-oaks-2","type":"hotel","label":"Thousand Oaks stay 2","status":"STILL NEEDED","name":"Thousand Oaks / Westlake Village","checkIn":"2026-12-31","checkOut":"2027-01-04","nights":4,"address":"待确认","detail":"PLANNED: Dec 31–Jan 4, 4 nights near friends."},
-    {"id":"flight-return-1","type":"flight","label":"Return segment 1","status":"PAID","from":"LAX","to":"ORD","date":"2027-01-04","depart":"08:15","arrive":"14:39","flightNumber":"UA1946","nonstop":true,"duration":"4h 24m","aircraft":"Airbus A321","operator":"United Airlines","connectionAfter":"2h 11m at ORD","detail":"United Economy (T) · Meals available for purchase."},
-    {"id":"flight-return-2","type":"flight","label":"Return segment 2","status":"PAID","from":"ORD","to":"LNS","date":"2027-01-04","depart":"16:50","arrive":"19:56","flightNumber":"UA6060","nonstop":true,"duration":"2h 06m","aircraft":"Bombardier CRJ200","operator":"SkyWest DBA United Express","detail":"United Economy (T) · Meals are not offered on this flight."}
+  "sync": {
+    "source": "Gmail → Google Apps Script → GitHub",
+    "lastChecked": "2026-09-20 09:26 EDT",
+    "mode": "auto",
+    "privacy": "public-safe-fields-only",
+    "lastResult": "0 changes · 0 review",
+    "engine": "gmail-sync/1.2.0",
+    "pollIntervalMinutes": 15,
+    "lastWriteAt": "2026-09-17 20:50 EDT"
+  },
+  "bookings": [
+    {
+      "id": "flight-outbound-1",
+      "type": "flight",
+      "label": "Outbound segment 1",
+      "status": "PAID",
+      "from": "LNS",
+      "to": "ORD",
+      "date": "2026-12-24",
+      "depart": "09:47",
+      "arrive": "11:10",
+      "flightNumber": "UA6055",
+      "nonstop": true,
+      "duration": "2h 23m",
+      "aircraft": "Bombardier CRJ200",
+      "operator": "SkyWest DBA United Express",
+      "connectionAfter": "1h 45m at ORD",
+      "detail": "United Economy (L) · Meals are not offered on this flight."
+    },
+    {
+      "id": "flight-outbound-2",
+      "type": "flight",
+      "label": "Outbound segment 2",
+      "status": "PAID",
+      "from": "ORD",
+      "to": "LAX",
+      "date": "2026-12-24",
+      "depart": "12:55",
+      "arrive": "15:27",
+      "flightNumber": "UA1363",
+      "nonstop": true,
+      "duration": "4h 32m",
+      "aircraft": "Boeing 777-200",
+      "operator": "United Airlines",
+      "detail": "United Economy (L) · Meals available for purchase."
+    },
+    {
+      "id": "car-california",
+      "type": "car",
+      "label": "California road-trip rental",
+      "status": "STILL NEEDED",
+      "name": "Tesla Model X with FSD (Supervised)",
+      "pickup": "LAX",
+      "dropoff": "LAX",
+      "pickupDate": "2026-12-24",
+      "dropoffDate": "2027-01-04",
+      "detail": "One-car California road trip. Prioritize Model X, FSD (Supervised), sufficient/unlimited mileage, clear Supercharging billing, and family luggage space."
+    },
+    {
+      "id": "hotel-thousand-oaks-1",
+      "type": "hotel",
+      "label": "Thousand Oaks stay 1",
+      "status": "STILL NEEDED",
+      "name": "Thousand Oaks / Westlake Village",
+      "checkIn": "2026-12-24",
+      "checkOut": "2026-12-29",
+      "nights": 5,
+      "address": "待确认",
+      "detail": "PLANNED: Dec 24–29, 5 nights near friends."
+    },
+    {
+      "id": "hotel-san-jose",
+      "type": "hotel",
+      "label": "San Jose stay",
+      "status": "STILL NEEDED",
+      "name": "San Jose hotel",
+      "checkIn": "2026-12-29",
+      "checkOut": "2026-12-31",
+      "nights": 2,
+      "address": "待确认",
+      "detail": "PLANNED: Dec 29–31, 2 nights with one full San Jose day."
+    },
+    {
+      "id": "hotel-thousand-oaks-2",
+      "type": "hotel",
+      "label": "Thousand Oaks stay 2",
+      "status": "STILL NEEDED",
+      "name": "Thousand Oaks / Westlake Village",
+      "checkIn": "2026-12-31",
+      "checkOut": "2027-01-04",
+      "nights": 4,
+      "address": "待确认",
+      "detail": "PLANNED: Dec 31–Jan 4, 4 nights near friends."
+    },
+    {
+      "id": "flight-return-1",
+      "type": "flight",
+      "label": "Return segment 1",
+      "status": "PAID",
+      "from": "LAX",
+      "to": "ORD",
+      "date": "2027-01-04",
+      "depart": "08:15",
+      "arrive": "14:39",
+      "flightNumber": "UA1946",
+      "nonstop": true,
+      "duration": "4h 24m",
+      "aircraft": "Airbus A321",
+      "operator": "United Airlines",
+      "connectionAfter": "2h 11m at ORD",
+      "detail": "United Economy (T) · Meals available for purchase."
+    },
+    {
+      "id": "flight-return-2",
+      "type": "flight",
+      "label": "Return segment 2",
+      "status": "PAID",
+      "from": "ORD",
+      "to": "LNS",
+      "date": "2027-01-04",
+      "depart": "16:50",
+      "arrive": "19:56",
+      "flightNumber": "UA6060",
+      "nonstop": true,
+      "duration": "2h 06m",
+      "aircraft": "Bombardier CRJ200",
+      "operator": "SkyWest DBA United Express",
+      "detail": "United Economy (T) · Meals are not offered on this flight."
+    }
   ],
-  "reservations":[],
-  "planning":{"booked":["12/24 United LNS → ORD → LAX, 09:47–15:27","1/4 United LAX → ORD → LNS, 08:15–19:56","United Economy round-trip airfare paid: $1,762.65"],"planned":["Thousand Oaks / Westlake Village near friends for 5 nights: Dec 24–29","Drive Thousand Oaks → San Jose on Dec 29","San Jose for 2 nights with one full day: Dec 29–31","Drive San Jose → Thousand Oaks on Dec 31","Stay near friends again through Monday Jan 4","Use one Tesla Model X rental for the entire California road trip"],"flex":["Exact northbound road-trip departure time can move based on visits and hotel pricing","Exact rental-car pickup/return timing remains flexible"]},
-  "costs":{"airfarePaid":1762.65,"airfareCurrency":"USD","airfareStatus":"PAID","rentalCar":"STILL NEEDED","hotels":"STILL NEEDED"},
-  "itinerary":[],
-  "checklist":[],
-  "airportOptions":[]
+  "reservations": [],
+  "planning": {
+    "booked": [
+      "12/24 United LNS → ORD → LAX, 09:47–15:27",
+      "1/4 United LAX → ORD → LNS, 08:15–19:56",
+      "United Economy round-trip airfare paid: $1,762.65"
+    ],
+    "planned": [
+      "Thousand Oaks / Westlake Village near friends for 5 nights: Dec 24–29",
+      "Drive Thousand Oaks → San Jose on Dec 29",
+      "San Jose for 2 nights with one full day: Dec 29–31",
+      "Drive San Jose → Thousand Oaks on Dec 31",
+      "Stay near friends again through Monday Jan 4",
+      "Use one Tesla Model X rental for the entire California road trip"
+    ],
+    "flex": [
+      "Exact northbound road-trip departure time can move based on visits and hotel pricing",
+      "Exact rental-car pickup/return timing remains flexible"
+    ]
+  },
+  "costs": {
+    "airfarePaid": 1762.65,
+    "airfareCurrency": "USD",
+    "airfareStatus": "PAID",
+    "rentalCar": "STILL NEEDED",
+    "hotels": "STILL NEEDED"
+  },
+  "itinerary": [
+    {
+      "date": "12/24",
+      "map": "LNS/LAX",
+      "title": {
+        "zh-CN": "Home → LNS → ORD → LAX → Thousand Oaks",
+        "zh-TW": "Home → LNS → ORD → LAX → Thousand Oaks",
+        "en": "Home → LNS → ORD → LAX → Thousand Oaks"
+      },
+      "sub": {
+        "zh-CN": "从 Lancaster 出发，经 Chicago 转机抵达 LAX；取车后前往 Thousand Oaks / Westlake Village。",
+        "zh-TW": "從 Lancaster 出發，經 Chicago 轉機抵達 LAX；取車後前往 Thousand Oaks / Westlake Village。",
+        "en": "Depart from Lancaster, connect in Chicago, arrive at LAX, pick up the rental car, then drive to Thousand Oaks / Westlake Village."
+      },
+      "events": [
+        {
+          "time": {
+            "zh-CN": "约 07:30",
+            "zh-TW": "約 07:30",
+            "en": "~7:30 AM"
+          },
+          "title": {
+            "zh-CN": "Home → LNS",
+            "zh-TW": "Home → LNS",
+            "en": "Home → LNS"
+          },
+          "detail": {
+            "zh-CN": "开车前往 Lancaster Airport；LNS 旅客停车免费，无需作为预订项目。",
+            "zh-TW": "開車前往 Lancaster Airport；LNS 旅客停車免費，無需作為預訂項目。",
+            "en": "Drive to Lancaster Airport. Passenger parking at LNS is free and is not a booking item."
+          },
+          "iso": "2026-12-24T07:30:00-05:00",
+          "place": "Lancaster Airport, PA"
+        },
+        {
+          "time": "09:47",
+          "title": {
+            "zh-CN": "UA6055 · LNS → ORD",
+            "zh-TW": "UA6055 · LNS → ORD",
+            "en": "UA6055 · LNS → ORD"
+          },
+          "detail": {
+            "zh-CN": "09:47 起飞，11:10 抵达；ORD 转机 1 小时 45 分。",
+            "zh-TW": "09:47 起飛，11:10 抵達；ORD 轉機 1 小時 45 分。",
+            "en": "Departs 9:47 AM, arrives 11:10 AM; 1h 45m connection at ORD."
+          },
+          "iso": "2026-12-24T09:47:00-05:00",
+          "place": "Lancaster Airport, PA"
+        },
+        {
+          "time": "12:55",
+          "title": {
+            "zh-CN": "UA1363 · ORD → LAX",
+            "zh-TW": "UA1363 · ORD → LAX",
+            "en": "UA1363 · ORD → LAX"
+          },
+          "detail": {
+            "zh-CN": "12:55 起飞，15:27 抵达 LAX。",
+            "zh-TW": "12:55 起飛，15:27 抵達 LAX。",
+            "en": "Departs 12:55 PM, arrives LAX at 3:27 PM."
+          },
+          "iso": "2026-12-24T12:55:00-06:00",
+          "place": "Chicago O'Hare International Airport"
+        },
+        {
+          "time": {
+            "zh-CN": "抵达后",
+            "zh-TW": "抵達後",
+            "en": "After arrival"
+          },
+          "title": {
+            "zh-CN": "LAX 取 Tesla Model X",
+            "zh-TW": "LAX 取 Tesla Model X",
+            "en": "Pick up Tesla Model X at LAX"
+          },
+          "detail": {
+            "zh-CN": "整段 California 行程只租一辆车；确认 7 座、FSD (Supervised)、里程、Supercharging 计费和保险。",
+            "zh-TW": "整段 California 行程只租一輛車；確認 7 座、FSD (Supervised)、里程、Supercharging 計費和保險。",
+            "en": "Use one car for the entire California trip; confirm 7 seats, FSD (Supervised), mileage, Supercharging billing, and insurance."
+          },
+          "iso": "2026-12-24T16:30:00-08:00",
+          "place": "Los Angeles International Airport"
+        },
+        {
+          "time": {
+            "zh-CN": "傍晚",
+            "zh-TW": "傍晚",
+            "en": "Evening"
+          },
+          "title": {
+            "zh-CN": "LAX → Thousand Oaks / Westlake Village",
+            "zh-TW": "LAX → Thousand Oaks / Westlake Village",
+            "en": "LAX → Thousand Oaks / Westlake Village"
+          },
+          "detail": {
+            "zh-CN": "入住第一段酒店，连续住 5 晚（12/24–12/29）。",
+            "zh-TW": "入住第一段飯店，連續住 5 晚（12/24–12/29）。",
+            "en": "Check in for the first 5-night stay, Dec 24–29."
+          },
+          "iso": "2026-12-24T18:00:00-08:00",
+          "place": "Thousand Oaks, CA"
+        }
+      ]
+    },
+    {
+      "date": "12/25–12/28",
+      "map": "Thousand Oaks",
+      "title": {
+        "zh-CN": "Thousand Oaks / Westlake Village",
+        "zh-TW": "Thousand Oaks / Westlake Village",
+        "en": "Thousand Oaks / Westlake Village"
+      },
+      "sub": {
+        "zh-CN": "住在朋友附近，减少换酒店和搬运行李。",
+        "zh-TW": "住在朋友附近，減少換飯店和搬運行李。",
+        "en": "Stay near friends and avoid unnecessary hotel changes or luggage moves."
+      },
+      "events": [
+        {
+          "time": {
+            "zh-CN": "灵活",
+            "zh-TW": "彈性",
+            "en": "Flexible"
+          },
+          "title": {
+            "zh-CN": "朋友探访 / LA 周边活动",
+            "zh-TW": "朋友探訪 / LA 周邊活動",
+            "en": "Friends / LA-area plans"
+          },
+          "detail": {
+            "zh-CN": "以家庭节奏为主，酒店保持不变。",
+            "zh-TW": "以家庭節奏為主，飯店保持不變。",
+            "en": "Keep the same hotel and plan around the family's pace."
+          },
+          "iso": "2026-12-25T10:00:00-08:00",
+          "place": "Thousand Oaks, CA"
+        }
+      ]
+    },
+    {
+      "date": "12/29",
+      "map": "San Jose",
+      "title": {
+        "zh-CN": "Thousand Oaks → San Jose",
+        "zh-TW": "Thousand Oaks → San Jose",
+        "en": "Thousand Oaks → San Jose"
+      },
+      "sub": {
+        "zh-CN": "退房后自驾北上 San Jose，入住 2 晚。",
+        "zh-TW": "退房後自駕北上 San Jose，入住 2 晚。",
+        "en": "Check out and drive north to San Jose for a 2-night stay."
+      },
+      "events": [
+        {
+          "time": {
+            "zh-CN": "上午",
+            "zh-TW": "上午",
+            "en": "Morning"
+          },
+          "title": {
+            "zh-CN": "Thousand Oaks → San Jose",
+            "zh-TW": "Thousand Oaks → San Jose",
+            "en": "Thousand Oaks → San Jose"
+          },
+          "detail": {
+            "zh-CN": "当天完成公路行程；实际出发时间可按探访安排和交通调整。",
+            "zh-TW": "當天完成公路行程；實際出發時間可按探訪安排和交通調整。",
+            "en": "Road-trip day; departure time can flex around visits and traffic."
+          },
+          "iso": "2026-12-29T09:30:00-08:00",
+          "place": "San Jose, CA"
+        },
+        {
+          "time": {
+            "zh-CN": "下午",
+            "zh-TW": "下午",
+            "en": "Afternoon"
+          },
+          "title": {
+            "zh-CN": "San Jose 酒店入住",
+            "zh-TW": "San Jose 飯店入住",
+            "en": "Check in at San Jose hotel"
+          },
+          "detail": {
+            "zh-CN": "12/29–12/31，共 2 晚。",
+            "zh-TW": "12/29–12/31，共 2 晚。",
+            "en": "Two nights, Dec 29–31."
+          },
+          "iso": "2026-12-29T16:00:00-08:00",
+          "place": "San Jose, CA"
+        }
+      ]
+    },
+    {
+      "date": "12/30",
+      "map": "San Jose",
+      "title": {
+        "zh-CN": "San Jose",
+        "zh-TW": "San Jose",
+        "en": "San Jose"
+      },
+      "sub": {
+        "zh-CN": "完整一天留在 San Jose。",
+        "zh-TW": "完整一天留在 San Jose。",
+        "en": "One full day in San Jose."
+      },
+      "events": [
+        {
+          "time": {
+            "zh-CN": "全天",
+            "zh-TW": "全天",
+            "en": "All day"
+          },
+          "title": {
+            "zh-CN": "San Jose 行程",
+            "zh-TW": "San Jose 行程",
+            "en": "San Jose day"
+          },
+          "detail": {
+            "zh-CN": "朋友探访和家庭活动为主。",
+            "zh-TW": "朋友探訪和家庭活動為主。",
+            "en": "Friends and family activities."
+          },
+          "iso": "2026-12-30T10:00:00-08:00",
+          "place": "San Jose, CA"
+        }
+      ]
+    },
+    {
+      "date": "12/31",
+      "map": "Thousand Oaks",
+      "title": {
+        "zh-CN": "San Jose → Thousand Oaks",
+        "zh-TW": "San Jose → Thousand Oaks",
+        "en": "San Jose → Thousand Oaks"
+      },
+      "sub": {
+        "zh-CN": "退房后南下，回到 Thousand Oaks / Westlake Village。",
+        "zh-TW": "退房後南下，回到 Thousand Oaks / Westlake Village。",
+        "en": "Check out and drive south back to Thousand Oaks / Westlake Village."
+      },
+      "events": [
+        {
+          "time": {
+            "zh-CN": "上午",
+            "zh-TW": "上午",
+            "en": "Morning"
+          },
+          "title": {
+            "zh-CN": "San Jose → Thousand Oaks",
+            "zh-TW": "San Jose → Thousand Oaks",
+            "en": "San Jose → Thousand Oaks"
+          },
+          "detail": {
+            "zh-CN": "返回朋友附近；第二段住宿 12/31–1/4，共 4 晚。",
+            "zh-TW": "返回朋友附近；第二段住宿 12/31–1/4，共 4 晚。",
+            "en": "Return near friends for the second stay, Dec 31–Jan 4, 4 nights."
+          },
+          "iso": "2026-12-31T09:30:00-08:00",
+          "place": "Thousand Oaks, CA"
+        },
+        {
+          "time": {
+            "zh-CN": "下午",
+            "zh-TW": "下午",
+            "en": "Afternoon"
+          },
+          "title": {
+            "zh-CN": "Thousand Oaks 酒店入住",
+            "zh-TW": "Thousand Oaks 飯店入住",
+            "en": "Check in near Thousand Oaks"
+          },
+          "detail": {
+            "zh-CN": "如果价格和便利性合适，优先与第一段住同一家酒店。",
+            "zh-TW": "如果價格和便利性合適，優先與第一段住同一家飯店。",
+            "en": "Prefer the same hotel as the first stay if price and convenience make sense."
+          },
+          "iso": "2026-12-31T16:00:00-08:00",
+          "place": "Thousand Oaks, CA"
+        }
+      ]
+    },
+    {
+      "date": "01/01–01/03",
+      "map": "Thousand Oaks",
+      "title": {
+        "zh-CN": "Thousand Oaks / Westlake Village",
+        "zh-TW": "Thousand Oaks / Westlake Village",
+        "en": "Thousand Oaks / Westlake Village"
+      },
+      "sub": {
+        "zh-CN": "继续住在朋友附近，直到周一返程。",
+        "zh-TW": "繼續住在朋友附近，直到週一返程。",
+        "en": "Stay near friends through Monday departure."
+      },
+      "events": [
+        {
+          "time": {
+            "zh-CN": "灵活",
+            "zh-TW": "彈性",
+            "en": "Flexible"
+          },
+          "title": {
+            "zh-CN": "朋友探访 / 家庭活动",
+            "zh-TW": "朋友探訪 / 家庭活動",
+            "en": "Friends / family plans"
+          },
+          "detail": {
+            "zh-CN": "不额外换酒店。",
+            "zh-TW": "不額外換飯店。",
+            "en": "No additional hotel change."
+          },
+          "iso": "2027-01-01T10:00:00-08:00",
+          "place": "Thousand Oaks, CA"
+        }
+      ]
+    },
+    {
+      "date": "01/04",
+      "map": "LAX/LNS",
+      "title": {
+        "zh-CN": "Thousand Oaks → LAX → ORD → LNS → Home",
+        "zh-TW": "Thousand Oaks → LAX → ORD → LNS → Home",
+        "en": "Thousand Oaks → LAX → ORD → LNS → Home"
+      },
+      "sub": {
+        "zh-CN": "清晨前往 LAX 还车，搭乘已出票的 United 航班回 Lancaster，再开车回家。",
+        "zh-TW": "清晨前往 LAX 還車，搭乘已出票的 United 航班回 Lancaster，再開車回家。",
+        "en": "Leave early for LAX, return the rental car, fly United back to Lancaster, then drive home."
+      },
+      "events": [
+        {
+          "time": {
+            "zh-CN": "约 04:45",
+            "zh-TW": "約 04:45",
+            "en": "~4:45 AM"
+          },
+          "title": {
+            "zh-CN": "Thousand Oaks → LAX",
+            "zh-TW": "Thousand Oaks → LAX",
+            "en": "Thousand Oaks → LAX"
+          },
+          "detail": {
+            "zh-CN": "目前仅作规划占位；租车还车地点和流程确定后再校准出发时间。",
+            "zh-TW": "目前僅作規劃占位；租車還車地點和流程確定後再校準出發時間。",
+            "en": "Planning placeholder only; refine after the rental return location and process are confirmed."
+          },
+          "iso": "2027-01-04T04:45:00-08:00",
+          "place": "Los Angeles International Airport"
+        },
+        {
+          "time": "08:15",
+          "title": {
+            "zh-CN": "UA1946 · LAX → ORD",
+            "zh-TW": "UA1946 · LAX → ORD",
+            "en": "UA1946 · LAX → ORD"
+          },
+          "detail": {
+            "zh-CN": "08:15 起飞，14:39 抵达；ORD 转机 2 小时 11 分。",
+            "zh-TW": "08:15 起飛，14:39 抵達；ORD 轉機 2 小時 11 分。",
+            "en": "Departs 8:15 AM, arrives 2:39 PM; 2h 11m connection at ORD."
+          },
+          "iso": "2027-01-04T08:15:00-08:00",
+          "place": "Los Angeles International Airport"
+        },
+        {
+          "time": "16:50",
+          "title": {
+            "zh-CN": "UA6060 · ORD → LNS",
+            "zh-TW": "UA6060 · ORD → LNS",
+            "en": "UA6060 · ORD → LNS"
+          },
+          "detail": {
+            "zh-CN": "16:50 起飞，19:56 抵达 LNS。",
+            "zh-TW": "16:50 起飛，19:56 抵達 LNS。",
+            "en": "Departs 4:50 PM, arrives LNS at 7:56 PM."
+          },
+          "iso": "2027-01-04T16:50:00-06:00",
+          "place": "Chicago O'Hare International Airport"
+        },
+        {
+          "time": {
+            "zh-CN": "抵达后",
+            "zh-TW": "抵達後",
+            "en": "After arrival"
+          },
+          "title": {
+            "zh-CN": "LNS → Home",
+            "zh-TW": "LNS → Home",
+            "en": "LNS → Home"
+          },
+          "detail": {
+            "zh-CN": "取自家车后开回 Downingtown。",
+            "zh-TW": "取自家車後開回 Downingtown。",
+            "en": "Pick up the family car and drive home to Downingtown."
+          },
+          "iso": "2027-01-04T20:20:00-05:00",
+          "place": "Downingtown, PA"
+        }
+      ]
+    }
+  ],
+  "checklist": [
+    {
+      "id": "car-california",
+      "bookingId": "car-california",
+      "icon": "🚙",
+      "status": "STILL NEEDED",
+      "title": {
+        "zh-CN": "预订 California 全程租车",
+        "zh-TW": "預訂 California 全程租車",
+        "en": "Book California road-trip rental"
+      },
+      "detail": {
+        "zh-CN": "LAX 12/24 取车 → 1/4 LAX 还车；目标 Tesla Model X，确认 7 座、FSD (Supervised)、里程、充电和保险。",
+        "zh-TW": "LAX 12/24 取車 → 1/4 LAX 還車；目標 Tesla Model X，確認 7 座、FSD (Supervised)、里程、充電和保險。",
+        "en": "LAX Dec 24 → LAX Jan 4; target Tesla Model X and confirm 7 seats, FSD (Supervised), mileage, charging, and insurance."
+      }
+    },
+    {
+      "id": "hotel-thousand-oaks-1",
+      "bookingId": "hotel-thousand-oaks-1",
+      "icon": "🏨",
+      "status": "STILL NEEDED",
+      "title": {
+        "zh-CN": "预订 Thousand Oaks 住宿 · 第一段",
+        "zh-TW": "預訂 Thousand Oaks 住宿 · 第一段",
+        "en": "Book Thousand Oaks stay · first segment"
+      },
+      "detail": {
+        "zh-CN": "12/24–12/29 · 5 晚；靠近朋友，优先停车、早餐、房间空间和家庭便利。",
+        "zh-TW": "12/24–12/29 · 5 晚；靠近朋友，優先停車、早餐、房間空間和家庭便利。",
+        "en": "Dec 24–29 · 5 nights; stay near friends and prioritize parking, breakfast, room space, and family convenience."
+      }
+    },
+    {
+      "id": "hotel-san-jose",
+      "bookingId": "hotel-san-jose",
+      "icon": "🏨",
+      "status": "STILL NEEDED",
+      "title": {
+        "zh-CN": "预订 San Jose 住宿",
+        "zh-TW": "預訂 San Jose 住宿",
+        "en": "Book San Jose stay"
+      },
+      "detail": {
+        "zh-CN": "12/29–12/31 · 2 晚；12/30 为完整一天。",
+        "zh-TW": "12/29–12/31 · 2 晚；12/30 為完整一天。",
+        "en": "Dec 29–31 · 2 nights, with Dec 30 as the full San Jose day."
+      }
+    },
+    {
+      "id": "hotel-thousand-oaks-2",
+      "bookingId": "hotel-thousand-oaks-2",
+      "icon": "🏨",
+      "status": "STILL NEEDED",
+      "title": {
+        "zh-CN": "预订 Thousand Oaks 住宿 · 第二段",
+        "zh-TW": "預訂 Thousand Oaks 住宿 · 第二段",
+        "en": "Book Thousand Oaks stay · second segment"
+      },
+      "detail": {
+        "zh-CN": "12/31–1/4 · 4 晚；如果价格合理，优先与第一段同一家酒店。",
+        "zh-TW": "12/31–1/4 · 4 晚；如果價格合理，優先與第一段同一家飯店。",
+        "en": "Dec 31–Jan 4 · 4 nights; prefer the same hotel as the first segment if pricing is reasonable."
+      }
+    }
+  ],
+  "airportOptions": []
 }
