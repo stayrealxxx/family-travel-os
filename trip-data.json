@@ -218,13 +218,13 @@
   },
   "sync": {
     "source": "Gmail → Google Apps Script → GitHub",
-    "lastChecked": "2026-09-20 09:26 EDT",
+    "lastChecked": "2026-09-25 13:35 EDT",
     "mode": "auto",
     "privacy": "public-safe-fields-only",
-    "lastResult": "0 changes · 0 review",
+    "lastResult": "0 changes · 1 review",
     "engine": "gmail-sync/1.2.0",
     "pollIntervalMinutes": 15,
-    "lastWriteAt": "2026-09-17 20:50 EDT"
+    "lastWriteAt": "2026-09-25 13:35 EDT"
   },
   "bookings": [
     {
